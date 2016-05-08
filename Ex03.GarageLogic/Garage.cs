@@ -6,24 +6,45 @@ namespace Ex03.GarageLogic
 {
     public class Garage
     {
-        internal static List<VehicleRecord> m_VehicleRecords;
+        private static Dictionary<string, VehicleRecord> m_licenseToRecordDictionary =
+            new Dictionary<string, VehicleRecord>();
 
+        /// <summary>
+        /// Insert new vehicle to garage
+        /// in case of an existing vehicle, no new record will be created,
+        /// and current vehicle state will be changed to InRepair
+        /// </summary>
+        /// <param name="i_vehicle"></param>
+        /// <param name="i_owner"></param>
+        /// <returns>true if a new record was created</returns>
         internal static bool InsertVehicleRecord(Vehicle i_vehicle, VehicleOwner i_owner)
         {
-            //TODO: wrap in try & catch 
             bool res = false;
-            VehicleRecord record = new VehicleRecord(i_vehicle, i_owner);
-            m_VehicleRecords.Add(record);
+
+            if (m_licenseToRecordDictionary.ContainsKey(i_vehicle.r_LicenseNumber))
+            {
+                VehicleRecord recordToAlter = m_licenseToRecordDictionary[i_vehicle.r_LicenseNumber];
+                recordToAlter.ChangeVehicleStatusTo(eVehicleStatus.BeingFixed);
+            }
+            else
+            {
+                VehicleRecord record = new VehicleRecord(i_vehicle, i_owner);
+                m_licenseToRecordDictionary.Add(i_vehicle.r_LicenseNumber,record);
+                res = true;
+            }
+            
             return res;
         }
 
         internal static void PrintLicensePlatesByStatus(eVehicleStatus i_vehicleStatusToDisplay)
         {
-            foreach (VehicleRecord record in m_VehicleRecords)
+            
+            foreach (KeyValuePair<string, VehicleRecord> entry in m_licenseToRecordDictionary)
             {
-                if (record.m_Status == i_vehicleStatusToDisplay)
+                VehicleRecord recordToCheck = entry.Value;
+                if (recordToCheck.m_Status == i_vehicleStatusToDisplay)
                 {
-                    string plateNumber = record.m_Vehicle.r_LicenseNumber;
+                    string plateNumber = recordToCheck.m_Vehicle.r_LicenseNumber;
                     Console.WriteLine(plateNumber);
                 }
             }
@@ -52,7 +73,7 @@ namespace Ex03.GarageLogic
             return false;
         }
 
-        static internal void PrintVehicleDetails(Vehicle i_Vehicle)
+        internal static void PrintVehicleDetails(Vehicle i_Vehicle)
         {
 
         }

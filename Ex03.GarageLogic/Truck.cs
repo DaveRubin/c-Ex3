@@ -9,7 +9,7 @@ namespace Ex03.GarageLogic
         public readonly bool r_IsCarryingHazardousMaterials;
         public readonly float r_MaxWeightAllowed;
 
-        PetrolPowerSource PowerSource
+        public PetrolPowerSource PowerSource
         {
             get
             {

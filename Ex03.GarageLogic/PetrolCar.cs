@@ -6,7 +6,7 @@ namespace Ex03.GarageLogic
 {
     public class PetrolCar : Car
     {
-        PetrolPowerSource PowerSource
+        public PetrolPowerSource PowerSource
         {
             get
             {

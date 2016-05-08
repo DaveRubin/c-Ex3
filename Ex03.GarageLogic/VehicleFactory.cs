@@ -37,8 +37,6 @@ namespace Ex03.GarageLogic
         {
             PetrolMotorCycle result;
 
-            //TODO: create consts for tires default
-            //TODO: create air pressures consts
             List<Tire> tires = GetTires(k_MotorcycleTires, TireManufacturers.k_GoodYear, k_MotorcycleAirPressure);
             result = new PetrolMotorCycle(
                 k_PetrolMotorcycleFuelType,

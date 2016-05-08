@@ -6,23 +6,23 @@ namespace Ex03.GarageLogic
 {
     class PetrolPowerSource : PowerSource
     {
-        public readonly eFuelType r_feulType;
-        public readonly float r_maxFuelAllowed;
-        private float m_currentFuelAmount;
+        public readonly eFuelType r_FeulType;
+        public readonly float r_MaxFuelAllowed;
+        private float m_CurrentFuelAmount;
 
         public float CurrentFuelAmount
         {
             get
             {
-                return m_currentFuelAmount;
+                return m_CurrentFuelAmount;
             }
         }
 
         public PetrolPowerSource(eFuelType i_fuelType, float i_maxFuelAllowed)
         {
-            r_feulType = i_fuelType;
-            r_maxFuelAllowed = i_maxFuelAllowed;
-            m_currentFuelAmount = i_maxFuelAllowed;
+            r_FeulType = i_fuelType;
+            r_MaxFuelAllowed = i_maxFuelAllowed;
+            m_CurrentFuelAmount = i_maxFuelAllowed;
         }
 
         /// <summary>
@@ -32,15 +32,15 @@ namespace Ex03.GarageLogic
         /// <param name="i_amount">should'nt excees r_maxFuelAllowed</param>
         public void Fuel(eFuelType i_fuelType, float i_amount)
         {
-            if (i_fuelType != r_feulType)
+            if (i_fuelType != r_FeulType)
             {
                 //TODO : throw exception
             }
-            else if (i_amount + m_currentFuelAmount > r_maxFuelAllowed)
+            else if (i_amount + m_CurrentFuelAmount > r_MaxFuelAllowed)
             {
                 //TODO: throw another exception
             }
-            m_currentFuelAmount += i_amount;
+            m_CurrentFuelAmount += i_amount;
         }
 
         /// <summary>
@@ -50,13 +50,13 @@ namespace Ex03.GarageLogic
         {
             get
             {
-                return m_currentFuelAmount / r_maxFuelAllowed;
+                return m_CurrentFuelAmount / r_MaxFuelAllowed;
             }
         }
 
         public enum eFuelType 
         {
-            Diesel,
+            Soler,
             Octan96,
             Octan95,
             Octan98

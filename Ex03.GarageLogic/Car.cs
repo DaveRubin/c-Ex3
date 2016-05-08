@@ -6,8 +6,8 @@ namespace Ex03.GarageLogic
 {
     class Car : Vehicle
     {
-        public readonly int r_doorsCount;
-        public readonly eCarColor r_color;
+        public readonly int r_DoorsCount;
+        public readonly eCarColor r_Color;
 
         /// <summary>
         /// Create a new car
@@ -22,13 +22,13 @@ namespace Ex03.GarageLogic
             PowerSource i_powerSource,
             string i_modelName,
             string i_licenseNumber,
-            List<Wheel> i_wheels,
+            List<Tire> i_wheels,
             eCarColor i_color,
             int i_doorsCount)
             : base(i_powerSource, i_modelName, i_licenseNumber, i_wheels)
         {
-            r_color = i_color;
-            r_doorsCount = i_doorsCount;
+            r_Color = i_color;
+            r_DoorsCount = i_doorsCount;
         }
 
         public enum eCarColor

@@ -6,26 +6,26 @@ namespace Ex03.GarageLogic
 {
     internal class Vehicle
     {
-        public readonly PowerSource r_powerSource;
-        public readonly string r_modelName;
-        public readonly string r_licenseNumber;
+        public readonly PowerSource r_PowerSource;
+        public readonly string r_ModelName;
+        public readonly string r_LicenseNumber;
 
-        public List<Wheel> m_wheels;
+        public List<Tire> m_Tires;
 
         public float GetSourceEnergyPercentage
         {
             get
             {
-                return r_powerSource.GetPercentageLeft;
+                return r_PowerSource.GetPercentageLeft;
             }
         }
 
-        public Vehicle(PowerSource i_powerSource, string i_modelName, string i_licenseNumber, List<Wheel> i_wheels)
+        public Vehicle(PowerSource i_powerSource, string i_modelName, string i_licenseNumber, List<Tire> i_Tires)
         {
-            r_powerSource = i_powerSource;
-            r_modelName = i_modelName;
-            r_licenseNumber = i_licenseNumber;
-            m_wheels = i_wheels;
+            r_PowerSource = i_powerSource;
+            r_ModelName = i_modelName;
+            r_LicenseNumber = i_licenseNumber;
+            m_Tires = i_Tires;
         }
     }
 }

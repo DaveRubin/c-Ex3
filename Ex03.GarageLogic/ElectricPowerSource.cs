@@ -7,14 +7,14 @@ namespace Ex03.GarageLogic
     class ElectricPowerSource : PowerSource
     {
 
-        public readonly float r_maxHours;
-        private float m_hoursLeft;
+        public readonly float r_MaxHours;
+        private float m_HoursLeft;
 
         public float HoursLeft
         {
             get
             {
-                return m_hoursLeft;
+                return m_HoursLeft;
             }
         }
 
@@ -24,8 +24,8 @@ namespace Ex03.GarageLogic
         /// <param name="i_maxHours"></param>
         public ElectricPowerSource(float i_maxHours)
         {
-            r_maxHours = i_maxHours;
-            m_hoursLeft = i_maxHours;
+            r_MaxHours = i_maxHours;
+            m_HoursLeft = i_maxHours;
         }
 
         /// <summary>
@@ -35,11 +35,11 @@ namespace Ex03.GarageLogic
         /// <param name="i_hoursToCharge"></param>
         public void Charge(float i_hoursToCharge)
         {
-            if (m_hoursLeft+ i_hoursToCharge > r_maxHours)
+            if (m_HoursLeft+ i_hoursToCharge > r_MaxHours)
             {
                 //TODO: throw exception
             }
-            m_hoursLeft += i_hoursToCharge;
+            m_HoursLeft += i_hoursToCharge;
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Ex03.GarageLogic
         {
             get
             {
-                return m_hoursLeft / r_maxHours;
+                return m_HoursLeft / r_MaxHours;
             }
         }
 

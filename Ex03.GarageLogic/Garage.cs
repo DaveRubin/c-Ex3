@@ -23,7 +23,7 @@ namespace Ex03.GarageLogic
             {
                 if (record.m_Status == i_vehicleStatusToDisplay)
                 {
-                    string plateNumber = record.m_Vehicle.GetLicensePlateNumber;
+                    string plateNumber = record.m_Vehicle.r_LicenseNumber;
                     Console.WriteLine(plateNumber);
                 }
             }

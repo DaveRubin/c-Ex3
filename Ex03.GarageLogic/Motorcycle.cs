@@ -6,8 +6,8 @@ namespace Ex03.GarageLogic
 {
     class Motorcycle : Vehicle
     {
-        public readonly eLicenseType r_licenseType;
-        public readonly int r_engineVolume;
+        public readonly eLicenseType r_LicenseType;
+        public readonly int r_EngineVolume;
 
         /// <summary>
         /// Create a new motorcycle
@@ -22,13 +22,13 @@ namespace Ex03.GarageLogic
             PowerSource i_powerSource,
             string i_modelName,
             string i_licenseNumber,
-            List<Wheel> i_wheels,
+            List<Tire> i_wheels,
             eLicenseType i_licenseType,
             int i_engineVolume)
             : base(i_powerSource, i_modelName, i_licenseNumber, i_wheels)
         {
-            r_licenseType = i_licenseType;
-            r_engineVolume = i_engineVolume;
+            r_LicenseType = i_licenseType;
+            r_EngineVolume = i_engineVolume;
         }
 
         public enum eLicenseType

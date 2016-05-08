@@ -33,10 +33,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ElectricPowerSource.cs" />
+    <Compile Include="Garage.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="VehicleOwner.cs" />
     <Compile Include="PowerSource.cs" />
     <Compile Include="PetrolPowerSource.cs" />
     <Compile Include="Vehicle.cs" />
-    <Compile Include="Wheel.cs" />
+    <Compile Include="Tire.cs" />
+    <Compile Include="VehicleRecord.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -52,7 +52,7 @@ namespace Ex03.GarageLogic
             return false;
         }
 
-        internal static void PrintVehicleDetails(Vehicle i_Vehicle)
+        static internal void PrintVehicleDetails(Vehicle i_Vehicle)
         {
 
         }

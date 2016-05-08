@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ex03.GarageLogic
 {
-    class Car : Vehicle
+    public class Car : Vehicle
     {
         public readonly int r_DoorsCount;
         public readonly eCarColor r_Color;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ex03.GarageLogic
 {
-    internal class Vehicle
+    public  class Vehicle
     {
         public readonly PowerSource r_PowerSource;
         public readonly string r_ModelName;

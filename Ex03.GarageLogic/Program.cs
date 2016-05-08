@@ -8,6 +8,7 @@ namespace Ex03.GarageLogic
     {
         public static void Main()
         {
+            Motorcycle m = VehicleFactory.CreateElectricMotorcycle("A", "lll", Motorcycle.eLicenseType.A, 40);
             Console.WriteLine("Press Enter to Exit...");
             Console.ReadLine();
         }

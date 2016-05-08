@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ex03.GarageLogic
 {
-    class PetrolPowerSource : PowerSource
+    public class PetrolPowerSource : PowerSource
     {
         public readonly eFuelType r_FeulType;
         public readonly float r_MaxFuelAllowed;

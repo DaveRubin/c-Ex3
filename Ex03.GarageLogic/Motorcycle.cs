@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ex03.GarageLogic
 {
-    class Motorcycle : Vehicle
+    public class Motorcycle : Vehicle
     {
         public readonly eLicenseType r_LicenseType;
         public readonly int r_EngineVolume;

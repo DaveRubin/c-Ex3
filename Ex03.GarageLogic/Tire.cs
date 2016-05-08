@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ex03.GarageLogic
 {
-    class Tire
+    public class Tire
     {
         public readonly string r_ManufacturerName;
         public readonly float r_MaxAirPressure;

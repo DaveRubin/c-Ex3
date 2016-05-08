@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ex03.GarageLogic
 {
-    class ElectricPowerSource : PowerSource
+    public class ElectricPowerSource : PowerSource
     {
 
         public readonly float r_MaxHours;

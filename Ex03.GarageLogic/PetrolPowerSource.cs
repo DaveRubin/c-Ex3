@@ -25,6 +25,11 @@ namespace Ex03.GarageLogic
             m_currentFuelAmount = i_maxFuelAllowed;
         }
 
+        /// <summary>
+        /// Fuel power source with petrol
+        /// </summary>
+        /// <param name="i_fuelType">should match power source fuel type</param>
+        /// <param name="i_amount">should'nt excees r_maxFuelAllowed</param>
         public void Fuel(eFuelType i_fuelType, float i_amount)
         {
             if (i_fuelType != r_feulType)
@@ -38,6 +43,9 @@ namespace Ex03.GarageLogic
             m_currentFuelAmount += i_amount;
         }
 
+        /// <summary>
+        /// Get Fuel left (0-1)
+        /// </summary>
         public override float GetPercentageLeft
         {
             get

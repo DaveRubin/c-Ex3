@@ -6,9 +6,9 @@ namespace Ex03.GarageLogic
 {
     public class Garage
     {
-        static internal List<VehicleRecord> m_VehicleRecords;
+        internal static List<VehicleRecord> m_VehicleRecords;
 
-        static internal bool InsertVehicleRecord(Vehicle i_vehicle, VehicleOwner i_owner)
+        internal static bool InsertVehicleRecord(Vehicle i_vehicle, VehicleOwner i_owner)
         {
             //TODO: wrap in try & catch 
             bool res = false;
@@ -17,7 +17,7 @@ namespace Ex03.GarageLogic
             return res;
         }
 
-        static internal void PrintLicensePlatesByStatus(eVehicleStatus i_vehicleStatusToDisplay)
+        internal static void PrintLicensePlatesByStatus(eVehicleStatus i_vehicleStatusToDisplay)
         {
             foreach (VehicleRecord record in m_VehicleRecords)
             {
@@ -29,12 +29,12 @@ namespace Ex03.GarageLogic
             }
         }
 
-        static internal void ChangeVehicleStatusTo(VehicleRecord i_record, eVehicleStatus i_newVehicleStatus)
+        internal static void ChangeVehicleStatusTo(VehicleRecord i_record, eVehicleStatus i_newVehicleStatus)
         {
             i_record.ChangeVehicleStatusTo(i_newVehicleStatus);
         }
 
-        static internal void FillTiresToMax(Vehicle i_Vehicle)
+        internal static void FillTiresToMax(Vehicle i_Vehicle)
         {
             foreach (Tire tire in i_Vehicle.m_Tires)
             {
@@ -42,17 +42,17 @@ namespace Ex03.GarageLogic
             }
         }
 
-        static internal bool FillGasTank(int i_LicensePlateNumber, PetrolPowerSource.eFuelType i_FuelType, float i_AmountToFill)
+        internal static bool FillGasTank(int i_LicensePlateNumber, PetrolPowerSource.eFuelType i_FuelType, float i_AmountToFill)
         {
             return false;
         }
 
-        static internal bool FillBattery(int i_LicensePlateNumber, int i_MinutesToCharge)
+        internal static bool FillBattery(int i_LicensePlateNumber, int i_MinutesToCharge)
         {
             return false;
         }
 
-        static internal void PrintVehicleDetails(Vehicle i_Vehicle)
+        internal static void PrintVehicleDetails(Vehicle i_Vehicle)
         {
 
         }

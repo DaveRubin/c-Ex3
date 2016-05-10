@@ -19,5 +19,7 @@ namespace Ex03.GarageLogic
         public static string k_CarInvalidDoorsCount = "Invalid doors count.";
         public static string k_TruckNonPositiveWeight = "Non positive maximum weight is'nt allowed.";
         public static string k_TireNonPositiveMaxAirPressure = "Non positive maximum air pressure is'nt allowed.";
+        public static string k_GarageTryingToFillGasTankForElectric = "Can't fill gas tank for an electric vehicle";
+        public static string k_GarageTryingToChargePetrolVehicle = "Can't charge a petrol vehicle";
     }
 }

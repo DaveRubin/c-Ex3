@@ -9,8 +9,8 @@ namespace Ex03.ConsoleUI
     {
         public static void Main()
         {
-            Vehicle m = VehicleFactory.CreateElectricMotorcycle("bzzzzMobile", "123", Motorcycle.eLicenseType.A, 40);
-            //m.PowerSource.Charge(-10);
+            ElectricMotorCycle m = VehicleFactory.CreateElectricMotorcycle("bzzzzMobile", "123", Motorcycle.eLicenseType.A, 40);
+            m.PowerSource.Charge(-10);
             PetrolMotorCycle m2 = VehicleFactory.CreatePetrolMotorCycle("kawasakaki", "321", Motorcycle.eLicenseType.B1, 40);
             m2.PowerSource.Fuel(m2.PowerSource.r_FeulType,-50);
             Truck t = VehicleFactory.CreateTruck("trucky truck", "123456789", false, 50);

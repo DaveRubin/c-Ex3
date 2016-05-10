@@ -24,6 +24,11 @@ namespace Ex03.GarageLogic
         /// <param name="i_maxHours"></param>
         public ElectricPowerSource(float i_maxHours)
         {
+            if (i_maxHours <= 0)
+            {
+                throw new ValueOutOfRangeException(ExceptionMessages.k_ElectricPowerSourceNonPositiveMaxHours);
+            }
+
             r_MaxHours = i_maxHours;
             m_HoursLeft = i_maxHours;
         }
@@ -37,8 +42,9 @@ namespace Ex03.GarageLogic
         {
             if (m_HoursLeft+ i_hoursToCharge > r_MaxHours)
             {
-                //TODO: throw exception
+                throw new ValueOutOfRangeException(ExceptionMessages.k_ElectricPowerSourceExceedingMaximumHours);
             }
+
             m_HoursLeft += i_hoursToCharge;
         }
 

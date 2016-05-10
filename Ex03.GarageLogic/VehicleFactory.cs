@@ -6,6 +6,14 @@ namespace Ex03.GarageLogic
 {
     public class VehicleFactory
     {
+        public static enum eVehicleCatalogue
+        {
+            PetrolMotorCycle = 0,
+            ElectricMotorCycle = 1,
+            ElectricCar = 2,
+            PetrolCar = 3,
+            Truck = 4
+        }
         private const int k_MotorcycleAirPressure = 31;
         private const int k_CarAirPressure = 30;
         private const int k_TruckAirPressure = 28;

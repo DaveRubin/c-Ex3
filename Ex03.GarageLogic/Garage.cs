@@ -59,28 +59,33 @@ namespace Ex03.GarageLogic
 
         /// <summary>
         /// change record status by its vehicle license number
+        /// return true if found & changed status
         /// </summary>
         /// <param name="i_licenseNumber"></param>
         /// <param name="i_newVehicleStatus"></param>
-        public static void ChangeVehicleStatusTo(string i_licenseNumber, eVehicleStatus i_newVehicleStatus)
+        public static bool ChangeVehicleStatusTo(string i_licenseNumber, eVehicleStatus i_newVehicleStatus)
         {
+            bool isFoundAndChanged = false;
+
             if (m_licenseToRecordDictionary.ContainsKey(i_licenseNumber))
             {
                 VehicleRecord record = m_licenseToRecordDictionary[i_licenseNumber];
                 record.ChangeVehicleStatusTo(i_newVehicleStatus);
+                isFoundAndChanged = true;
             }
-            else
-            {
-                //TODO: add exception if not found
-            }
+
+            return isFoundAndChanged;
         }
 
         /// <summary>
         /// Inflate all tires in a vehicle by its license number
+        /// returns true if successfull 
         /// </summary>
         /// <param name="i_licenseNumber"></param>
-        public static void FillTiresToMax(string i_licenseNumber)
+        public static bool FillTiresToMax(string i_licenseNumber)
         {
+            bool isSuccess = false;
+
             if (m_licenseToRecordDictionary.ContainsKey(i_licenseNumber))
             {
                 Vehicle vehicle = m_licenseToRecordDictionary[i_licenseNumber].m_Vehicle;
@@ -89,15 +94,15 @@ namespace Ex03.GarageLogic
                 {
                     tire.InflateToMax();
                 }
+
+                isSuccess = true;
             }
-            else
-            {
-                //TODO: handle missing vehicle
-            }
+
+            return isSuccess;
         }
 
         /// <summary>
-        /// Fill gas tank
+        /// Fill gas tank returns true if found & filled
         /// </summary>
         /// <param name="i_LicensePlateNumber"></param>
         /// <param name="i_FuelType"></param>
@@ -105,22 +110,23 @@ namespace Ex03.GarageLogic
         /// <returns></returns>
         public static bool FillGasTank(string i_LicensePlateNumber, PetrolPowerSource.eFuelType i_FuelType, float i_AmountToFill)
         {
+            bool isSuccess = false;
+
             if (m_licenseToRecordDictionary.ContainsKey(i_LicensePlateNumber))
             {
                 Vehicle vehicle = m_licenseToRecordDictionary[i_LicensePlateNumber].m_Vehicle;
+
                 //check if vehicle is petrol source
                 if (vehicle.r_PowerSource.GetType() != typeof(PetrolPowerSource))
                 {
-                    //TODO: throw power source mismatch exception
+                    throw new ArgumentException(ExceptionMessages.k_GarageTryingToFillGasTankForElectric);
                 }
-                ((PetrolPowerSource)vehicle.r_PowerSource).Fuel(i_FuelType,i_AmountToFill);
 
+                ((PetrolPowerSource)vehicle.r_PowerSource).Fuel(i_FuelType,i_AmountToFill);
+                isSuccess = true;
             }
-            else
-            {
-                //TODO : handle missing vehicle
-            }
-            return false;
+
+            return isSuccess;
         }
 
         /// <summary>
@@ -131,23 +137,24 @@ namespace Ex03.GarageLogic
         /// <returns></returns>
         public static bool FillBattery(string i_LicensePlateNumber, int i_MinutesToCharge)
         {
+            bool isSuccess = false;
+
             if (m_licenseToRecordDictionary.ContainsKey(i_LicensePlateNumber))
             {
                 Vehicle vehicle = m_licenseToRecordDictionary[i_LicensePlateNumber].m_Vehicle;
+
                 //check if vehicle is petrol source
                 if (vehicle.r_PowerSource.GetType() != typeof(ElectricPowerSource))
                 {
-                    //TODO: throw power source mismatch exception
+                    throw new ArgumentException(ExceptionMessages.k_GarageTryingToChargePetrolVehicle);
                 }
                 float hoursToCharge = (float)i_MinutesToCharge / 60;
                 ((ElectricPowerSource)vehicle.r_PowerSource).Charge(hoursToCharge);
 
+                isSuccess = true;
             }
-            else
-            {
-                //TODO : handle missing vehicle
-            }
-            return false;
+
+            return isSuccess;
         }
         
         /// <summary>
@@ -157,10 +164,6 @@ namespace Ex03.GarageLogic
         /// <returns></returns>
         public static VehicleRecord GetVehicleDetails(string i_LicenseNumber)
         {
-            if (!m_licenseToRecordDictionary.ContainsKey(i_LicenseNumber))
-            {
-                //TODO: throw exception
-            }
             return m_licenseToRecordDictionary[i_LicenseNumber];
         }
 

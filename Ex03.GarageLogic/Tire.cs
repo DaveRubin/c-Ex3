@@ -20,6 +20,11 @@ namespace Ex03.GarageLogic
 
         public Tire(string i_manufacturerName,float i_maxAirPressure)
         {
+            if (i_maxAirPressure <= 0)
+            {
+                throw new ArgumentException(ExceptionMessages.k_TireNonPositiveMaxAirPressure,"i_maxAirPressure");
+            }
+
             r_ManufacturerName = i_manufacturerName;
             r_MaxAirPressure = i_maxAirPressure;
             m_CurrentAirPressure = i_maxAirPressure;
@@ -29,8 +34,9 @@ namespace Ex03.GarageLogic
         {
             if (m_CurrentAirPressure + i_airAddition > r_MaxAirPressure)
             {
-                //TODO: check max exception
+                throw new ValueOutOfRangeException(ExceptionMessages.k_TireExceededMaxAirPressure);
             }
+
             m_CurrentAirPressure += i_airAddition;
         }
 

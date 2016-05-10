@@ -73,9 +73,6 @@ namespace Ex03.GarageLogic
         {
             ElectricMotorCycle result;
 
-            //TODO: create consts for tires default
-            //TODO: create air pressures consts
-            //TODO: create enum for manufacturers
             List<Tire> tires = GetTires(k_MotorcycleTires, TireManufacturers.k_GoodYear, k_MotorcycleAirPressure);
             result = new ElectricMotorCycle(k_ElectricMotorcycleMaxHours, i_modelName, i_licenseNumber, tires, i_licencType, i_engineVolume);
             return result;

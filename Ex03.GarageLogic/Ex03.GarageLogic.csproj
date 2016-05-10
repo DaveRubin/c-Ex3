@@ -38,6 +38,7 @@
     <Compile Include="Car.cs" />
     <Compile Include="ElectricCar.cs" />
     <Compile Include="ElectricMotorCycle.cs" />
+    <Compile Include="ExceptionMessages.cs" />
     <Compile Include="Motorcycle.cs" />
     <Compile Include="PetrolCar.cs" />
     <Compile Include="PetrolMotorCycle.cs" />
@@ -45,6 +46,7 @@
     <Compile Include="Truck.cs" />
     <Compile Include="ElectricPowerSource.cs" />
     <Compile Include="Garage.cs" />
+    <Compile Include="ValueOutOfRangeException.cs" />
     <Compile Include="VehicleFactory.cs" />
     <Compile Include="VehicleOwner.cs" />
     <Compile Include="PowerSource.cs" />

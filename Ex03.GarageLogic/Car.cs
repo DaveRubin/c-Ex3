@@ -9,6 +9,8 @@ namespace Ex03.GarageLogic
         public readonly int r_DoorsCount;
         public readonly eCarColor r_Color;
 
+        private static List<int> s_ValidVehicleDoorsList = new List<int>(){2,3,4,5};
+
         /// <summary>
         /// Create a new car
         /// </summary>
@@ -27,8 +29,18 @@ namespace Ex03.GarageLogic
             int i_doorsCount)
             : base(i_powerSource, i_modelName, i_licenseNumber, i_wheels)
         {
+            if (ValidateDoorsCount(i_doorsCount))
+            {
+                throw new ArgumentException(ExceptionMessages.k_CarInvalidDoorsCount,"i_doorsCount");
+            }
+
             r_Color = i_color;
             r_DoorsCount = i_doorsCount;
+        }
+
+        private bool ValidateDoorsCount(int i_doorsCount)
+        {
+            return s_ValidVehicleDoorsList.IndexOf(i_doorsCount) != -1;
         }
 
         public enum eCarColor

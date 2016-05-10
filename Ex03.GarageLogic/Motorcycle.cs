@@ -27,6 +27,11 @@ namespace Ex03.GarageLogic
             int i_engineVolume)
             : base(i_powerSource, i_modelName, i_licenseNumber, i_wheels)
         {
+            if (i_engineVolume <= 0)
+            {
+                throw new ArgumentException(ExceptionMessages.k_MotorcycleNonPositiveEngineVolumeValue,"i_engineVolume");
+            }
+
             r_LicenseType = i_licenseType;
             r_EngineVolume = i_engineVolume;
         }

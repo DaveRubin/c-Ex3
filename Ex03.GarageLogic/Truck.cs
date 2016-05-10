@@ -36,6 +36,11 @@ namespace Ex03.GarageLogic
             float i_maxWeightAllowed)
             : base(new PetrolPowerSource(i_fuelType, i_maxFuelAllowed), i_modelName, i_licenseNumber, i_wheels)
         {
+            if (i_maxWeightAllowed <= 0)
+            {
+                throw new ArgumentException(ExceptionMessages.k_TruckNonPositiveWeight,"i_maxWeightAllowed");
+            }
+
             r_IsCarryingHazardousMaterials = i_isCarryingHazardousMaterials;
             r_MaxWeightAllowed = i_maxWeightAllowed;
         }

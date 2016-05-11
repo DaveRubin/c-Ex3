@@ -24,12 +24,14 @@ namespace Ex03.GarageLogic
         /// <summary>
         /// Create a new petrol motorcycle
         /// </summary>
+        /// <param name="i_tiresMenufecturer"></param>
         /// <param name="i_modelName"></param>
         /// <param name="i_licenseNumber"></param>
         /// <param name="i_licencType"></param>
         /// <param name="i_engineVolume"></param>
         /// <returns></returns>
         public static PetrolMotorCycle CreatePetrolMotorCycle(
+            string i_tiresMenufecturer,
             string i_modelName,
             string i_licenseNumber,
             Motorcycle.eLicenseType i_licencType,
@@ -37,7 +39,7 @@ namespace Ex03.GarageLogic
         {
             PetrolMotorCycle result;
 
-            List<Tire> tires = GetTires(k_MotorcycleTires, TireManufacturers.k_GoodYear, k_MotorcycleAirPressure);
+            List<Tire> tires = GetTires(k_MotorcycleTires, i_tiresMenufecturer, k_MotorcycleAirPressure);
             result = new PetrolMotorCycle(
                 k_PetrolMotorcycleFuelType,
                 k_PetrolMotorcycleMaxAmount,
@@ -52,12 +54,14 @@ namespace Ex03.GarageLogic
         /// <summary>
         /// Create a new electric motorcycle
         /// </summary>
+        /// <param name="i_tiresMenufecturer"></param>
         /// <param name="i_modelName"></param>
         /// <param name="i_licenseNumber"></param>
         /// <param name="i_licencType"></param>
         /// <param name="i_engineVolume"></param>
         /// <returns></returns>
         public static ElectricMotorCycle CreateElectricMotorcycle(
+            string i_tiresMenufecturer,
             string i_modelName,
             string i_licenseNumber,
             Motorcycle.eLicenseType i_licencType,
@@ -65,7 +69,7 @@ namespace Ex03.GarageLogic
         {
             ElectricMotorCycle result;
 
-            List<Tire> tires = GetTires(k_MotorcycleTires, TireManufacturers.k_GoodYear, k_MotorcycleAirPressure);
+            List<Tire> tires = GetTires(k_MotorcycleTires, i_tiresMenufecturer, k_MotorcycleAirPressure);
             result = new ElectricMotorCycle(k_ElectricMotorcycleMaxHours, i_modelName, i_licenseNumber, tires, i_licencType, i_engineVolume);
             return result;
         }
@@ -73,6 +77,7 @@ namespace Ex03.GarageLogic
         /// <summary>
         /// Create a new electric car
         /// </summary>
+        /// <param name="i_tiresMenufecturer"></param>
         /// <param name="i_modelName"></param>
         /// <param name="i_licenceNumber"></param>
         /// <param name="i_tiers"></param>
@@ -80,6 +85,7 @@ namespace Ex03.GarageLogic
         /// <param name="i_doorsCount"></param>
         /// <returns></returns>
         public static ElectricCar CreateElectricCar(
+            string i_tiresMenufecturer,
             string i_modelName,
             string i_licenceNumber,
             Car.eCarColor i_color,
@@ -87,7 +93,7 @@ namespace Ex03.GarageLogic
         {
             ElectricCar result;
 
-            List<Tire> tires = GetTires(k_CarTires, TireManufacturers.k_ChineseCrap, k_CarAirPressure);
+            List<Tire> tires = GetTires(k_CarTires, i_tiresMenufecturer, k_CarAirPressure);
             result = new ElectricCar(k_ElectricCarMaxHours, i_modelName, i_licenceNumber, tires, i_color, i_doorsCount);
             return result;
         }
@@ -95,12 +101,14 @@ namespace Ex03.GarageLogic
         /// <summary>
         /// Create new patrol car
         /// </summary>
+        /// <param name="i_tiresMenufecturer"></param>
         /// <param name="i_modelName"></param>
         /// <param name="i_licenceNumber"></param>
         /// <param name="i_color"></param>
         /// <param name="i_doorsCount"></param>
         /// <returns></returns>
         public static PetrolCar CreatePetrolCar(
+            string i_tiresMenufecturer,
             string i_modelName,
             string i_licenceNumber,
             Car.eCarColor i_color,
@@ -108,7 +116,7 @@ namespace Ex03.GarageLogic
         {
             PetrolCar result;
 
-            List<Tire> tires = GetTires(k_CarTires, TireManufacturers.k_ChineseCrap, k_CarAirPressure);
+            List<Tire> tires = GetTires(k_CarTires, i_tiresMenufecturer, k_CarAirPressure);
             result = new PetrolCar(
                 k_PetrolCarFuelType,
                 k_PetrolCarMaxAmount,
@@ -123,19 +131,21 @@ namespace Ex03.GarageLogic
         /// <summary>
         /// Create new truck
         /// </summary>
+        /// <param name="i_tiresMenufecturer"></param>
         /// <param name="i_modelName"></param>
         /// <param name="i_licenceNumber"></param>
         /// <param name="i_IsCarryingHazardousMaterials"></param>
         /// <param name="i_MaxWeightAllowed"></param>
         /// <returns></returns>
         public static Truck CreateTruck(
+            string i_tiresMenufecturer,
             string i_modelName,
             string i_licenceNumber,
             bool i_IsCarryingHazardousMaterials,
             float i_MaxWeightAllowed)
         {
             Truck result;
-            List<Tire> tires = GetTires(k_TruckTires, TireManufacturers.k_ChineseCrap, k_TruckAirPressure);
+            List<Tire> tires = GetTires(k_TruckTires, i_tiresMenufecturer, k_TruckAirPressure);
             result = new Truck(
                 k_PetrolTruckFuelType,
                 k_TruckMaxAmount,

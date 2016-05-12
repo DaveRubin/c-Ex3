@@ -8,9 +8,12 @@ namespace Ex03.ConsoleUI
 
     class MotorcycleView
     {
-        public static string GetMotorCycleView(Vehicle i_Vehicle)
+        private static string k_MotorcycleViewTemplate = @"License type : {0}
+Engine volume (cc): {1}";
+
+        public static string GetMotorCycleView(Motorcycle i_Motorcycle)
         {
-            return "";
+            return string.Format(k_MotorcycleViewTemplate, i_Motorcycle.r_LicenseType, i_Motorcycle.r_EngineVolume);
         }
     }
 }

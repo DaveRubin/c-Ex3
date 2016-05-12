@@ -48,15 +48,15 @@ Vehicle specific details:
             Type typeOfVehicle = i_VehicleToPrint.GetType();
             if (typeOfVehicle.IsSubclassOf(typeof(Motorcycle)))
             {
-                result = MotorcycleView.GetMotorCycleView(i_VehicleToPrint);
+                result = MotorcycleView.GetMotorCycleView(i_VehicleToPrint as Motorcycle);
             }
             else if (typeOfVehicle.IsSubclassOf(typeof(Car)))
             {
-                result = CarView.GetCarView(i_VehicleToPrint);
+                result = CarView.GetCarView(i_VehicleToPrint as Car);
             }
             else if (typeOfVehicle == typeof(Truck))
             {
-                result = TruckView.GetTruckView(i_VehicleToPrint);
+                result = TruckView.GetTruckView(i_VehicleToPrint as Truck);
             }
             return result;
         }

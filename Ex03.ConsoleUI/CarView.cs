@@ -8,9 +8,12 @@ namespace Ex03.ConsoleUI
 
     class CarView
     {
-        public static string GetCarView(Vehicle i_Vehicle)
+        private static string k_CarViewTemplate = @"Car color : {0}
+Number of doors: {1}";
+
+        public static string GetCarView(Car i_Car)
         {
-            return "";
+            return string.Format(k_CarViewTemplate, i_Car.r_Color, i_Car.r_DoorsCount);
         }
     }
 }

@@ -32,18 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="GarageSystem.cs" />
     <Compile Include="GarageSystemText.cs" />
     <Compile Include="GarageSystemView.cs" />
-=======
     <Compile Include="CarOwnerView.cs" />
     <Compile Include="CarView.cs" />
     <Compile Include="ElectricPowerSourceView.cs" />
     <Compile Include="GeneralVehicleView.cs" />
     <Compile Include="MotorcycleView.cs" />
     <Compile Include="PetrolPowerSourceView.cs" />
->>>>>>> 703485868e796bab778fafd7f1498536a6395524
     <Compile Include="Program.cs" />
     <Compile Include="TiresView.cs" />
     <Compile Include="TruckView.cs" />

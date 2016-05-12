@@ -31,11 +31,30 @@ Vehicle specific details:
             string basicVehicleView = GeneralVehicleView.GetGeneralVehicleView(i_record.m_Vehicle);
             string ownerView = CarOwnerView.GetVehicleOwnerView(i_record);
             string tiresView = "";
-            string powerSourceView = "";
+            string powerSourceView = GetPowerSourceView(i_record.m_Vehicle.r_PowerSource);
             string vehicleSpecificView = GetSpecificVehicleView(i_record.m_Vehicle);
 
             Console.WriteLine(string.Format(k_VehicleViewTemplate,basicVehicleView,ownerView,tiresView,powerSourceView,vehicleSpecificView));
 
+        }
+
+        /// <summary>
+        /// Get relevant power source view
+        /// </summary>
+        /// <param name="i_PowerSource"></param>
+        /// <returns></returns>
+        private static string GetPowerSourceView(PowerSource i_PowerSource)
+        {
+            string result = "";
+            if (i_PowerSource.GetType() == typeof(ElectricPowerSource))
+            {
+                result = ElectricPowerSourceView.GetElectricPowerSourceView(i_PowerSource as ElectricPowerSource);
+            }
+            else if (i_PowerSource.GetType() == typeof(PetrolPowerSource))
+            {
+                result = PetrolPowerSourceView.GetPetrolPowerSourceView(i_PowerSource as PetrolPowerSource);
+            }
+            return result;
         }
 
         /// <summary>

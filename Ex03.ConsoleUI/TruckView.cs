@@ -6,7 +6,7 @@ namespace Ex03.ConsoleUI
 {
     using Ex03.GarageLogic;
 
-    class TruckView
+    internal class TruckView
     {
         private static string k_TruckViewTemplate = @"Carrying hazardous materials : {0}
 Weight limit: {1}";

@@ -6,7 +6,7 @@ namespace Ex03.ConsoleUI
 {
     using Ex03.GarageLogic;
 
-    class CarView
+    internal class CarView
     {
         private static string k_CarViewTemplate = @"Car color : {0}
 Number of doors: {1}";

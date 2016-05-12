@@ -6,7 +6,7 @@ namespace Ex03.ConsoleUI
 {
     using Ex03.GarageLogic;
 
-    class ElectricPowerSourceView
+    internal class ElectricPowerSourceView
     {
         private const string k_ElectricPowerSourceViewTemplate = @"Hours Left : {0}/{1}";
 

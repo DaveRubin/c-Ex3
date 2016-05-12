@@ -6,7 +6,7 @@ namespace Ex03.ConsoleUI
 {
     using Ex03.GarageLogic;
 
-    class CarOwnerView
+    internal class CarOwnerView
     {
         private const string k_OwnerVehicleViewTemplate = @"Owner name: {0}
 Vehicle status: {1}";

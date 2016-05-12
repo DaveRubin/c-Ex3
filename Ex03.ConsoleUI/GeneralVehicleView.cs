@@ -6,7 +6,7 @@ namespace Ex03.ConsoleUI
 {
     using Ex03.GarageLogic;
 
-    class GeneralVehicleView
+    internal class GeneralVehicleView
     {
         private const string k_FullDetailsTemplate = @"License number: {0}
 Model name: {1}";

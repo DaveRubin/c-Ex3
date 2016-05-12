@@ -6,7 +6,7 @@ namespace Ex03.ConsoleUI
 {
     using Ex03.GarageLogic;
 
-    class PetrolPowerSourceView
+    internal class PetrolPowerSourceView
     {
         private const string k_PetrolPowerSourceViewTemplate = @"Fuel left : {0}/{1}
 Fuel type: {2}";

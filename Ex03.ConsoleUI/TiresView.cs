@@ -6,7 +6,7 @@ namespace Ex03.ConsoleUI
 {
     using Ex03.GarageLogic;
 
-    class TiresView
+    internal class TiresView
     {
         //4 should be TAB
         private const string k_TirePairTemplate = @"{0,-20} {1}

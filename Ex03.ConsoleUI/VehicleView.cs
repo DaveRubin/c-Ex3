@@ -6,7 +6,7 @@ namespace Ex03.ConsoleUI
 {
     using Ex03.GarageLogic;
 
-    class VehicleView
+    internal class VehicleView
     {
 
         private const string k_VehicleViewTemplate = @"----------------------------------

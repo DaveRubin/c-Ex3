@@ -6,7 +6,7 @@ namespace Ex03.ConsoleUI
 {
     using Ex03.GarageLogic;
 
-    class MotorcycleView
+    internal class MotorcycleView
     {
         private static string k_MotorcycleViewTemplate = @"License type : {0}
 Engine volume (cc): {1}";

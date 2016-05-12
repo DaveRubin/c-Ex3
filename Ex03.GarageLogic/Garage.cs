@@ -8,6 +8,8 @@ namespace Ex03.GarageLogic
     {
         private static Dictionary<string, VehicleRecord> m_licenseToRecordDictionary =
             new Dictionary<string, VehicleRecord>();
+        private static Dictionary<string, VehicleOwner> m_OwnerToPhoneDictionary =
+            new Dictionary<string, VehicleOwner>();
 
         /// <summary>
         /// Insert new vehicle to garage

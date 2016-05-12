@@ -6,7 +6,7 @@ namespace Ex03.GarageLogic
 {
     public class VehicleFactory
     {
-        public static enum eVehicleCatalogue
+        public enum eVehicleCatalogue
         {
             PetrolMotorCycle = 0,
             ElectricMotorCycle = 1,

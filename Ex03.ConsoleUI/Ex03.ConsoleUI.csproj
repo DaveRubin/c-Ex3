@@ -32,12 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CarOwnerView.cs" />
+    <Compile Include="CarView.cs" />
+    <Compile Include="GeneralVehicleView.cs" />
+    <Compile Include="MotorcycleView.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="TruckView.cs" />
+    <Compile Include="VehicleView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Ex03.GarageLogic, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Ex03.GarageLogic.dll</HintPath>
+      <HintPath>..\Ex03.GarageLogic\Ex03.GarageLogic.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>

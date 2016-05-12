@@ -29,7 +29,7 @@ namespace Ex03.GarageLogic
             int i_doorsCount)
             : base(i_powerSource, i_modelName, i_licenseNumber, i_wheels)
         {
-            if (ValidateDoorsCount(i_doorsCount))
+            if (!ValidateDoorsCount(i_doorsCount))
             {
                 throw new ArgumentException(ExceptionMessages.k_CarInvalidDoorsCount,"i_doorsCount");
             }

@@ -9,20 +9,6 @@ namespace Ex03.ConsoleUI
     internal class VehicleView
     {
 
-        private const string k_VehicleViewTemplate = @"----------------------------------
-Vehicle:
-{0}
-Owner:
-{1}
-Tires:
-{2}
-Vehicle power source:
-{3}
-Vehicle specific details:
-{4}
-----------------------------------
-";
-
         /// <summary>
         /// Print full details of a vehicle
         /// </summary>
@@ -35,7 +21,14 @@ Vehicle specific details:
             string powerSourceView = GetPowerSourceView(i_record.m_Vehicle.r_PowerSource);
             string vehicleSpecificView = GetSpecificVehicleView(i_record.m_Vehicle);
 
-            Console.WriteLine(string.Format(k_VehicleViewTemplate,basicVehicleView,ownerView,tiresView,powerSourceView,vehicleSpecificView));
+            Console.WriteLine(
+                string.Format(
+                    VehicleViewTextTemplates.k_VehicleViewTemplate,
+                    basicVehicleView,
+                    ownerView,
+                    tiresView,
+                    powerSourceView,
+                    vehicleSpecificView));
 
         }
 

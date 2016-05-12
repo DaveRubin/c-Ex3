@@ -45,6 +45,7 @@
     <Compile Include="TiresView.cs" />
     <Compile Include="TruckView.cs" />
     <Compile Include="VehicleView.cs" />
+    <Compile Include="VehicleViewTextTemplates.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Ex03.GarageLogic, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">

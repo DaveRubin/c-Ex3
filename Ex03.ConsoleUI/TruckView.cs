@@ -8,7 +8,7 @@ namespace Ex03.ConsoleUI
 
     class TruckView
     {
-        private static string k_TruckViewTemplate = @"Carrieng hazardous materials : {0}
+        private static string k_TruckViewTemplate = @"Carrying hazardous materials : {0}
 Weight limit: {1}";
 
         public static string GetTruckView(Truck i_Truck)

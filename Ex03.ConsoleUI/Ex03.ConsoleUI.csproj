@@ -39,6 +39,7 @@
     <Compile Include="MotorcycleView.cs" />
     <Compile Include="PetrolPowerSourceView.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="TiresView.cs" />
     <Compile Include="TruckView.cs" />
     <Compile Include="VehicleView.cs" />
   </ItemGroup>

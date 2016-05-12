@@ -34,7 +34,10 @@ namespace Ex03.GarageLogic
         {
             if (m_CurrentAirPressure + i_airAddition > r_MaxAirPressure)
             {
-                throw new ValueOutOfRangeException(ExceptionMessages.k_TireExceededMaxAirPressure);
+                throw new ValueOutOfRangeException(
+                    ExceptionMessages.k_TireExceededMaxAirPressure,
+                    0,
+                    (int)r_MaxAirPressure);
             }
 
             m_CurrentAirPressure += i_airAddition;

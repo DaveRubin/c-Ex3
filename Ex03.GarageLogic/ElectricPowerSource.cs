@@ -26,7 +26,7 @@ namespace Ex03.GarageLogic
         {
             if (i_maxHours <= 0)
             {
-                throw new ValueOutOfRangeException(ExceptionMessages.k_ElectricPowerSourceNonPositiveMaxHours);
+                throw new ArgumentException(ExceptionMessages.k_ElectricPowerSourceNonPositiveMaxHours,"i_maxHours");
             }
 
             r_MaxHours = i_maxHours;
@@ -42,7 +42,10 @@ namespace Ex03.GarageLogic
         {
             if (m_HoursLeft+ i_hoursToCharge > r_MaxHours)
             {
-                throw new ValueOutOfRangeException(ExceptionMessages.k_ElectricPowerSourceExceedingMaximumHours);
+                throw new ValueOutOfRangeException(
+                    ExceptionMessages.k_ElectricPowerSourceExceedingMaximumHours,
+                    0,
+                    (int)r_MaxHours);
             }
 
             m_HoursLeft += i_hoursToCharge;

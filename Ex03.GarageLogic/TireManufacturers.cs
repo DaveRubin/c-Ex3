@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ex03.GarageLogic
 {
-    class TireManufacturers
+    public class TireManufacturers
     {
         public const string k_GoodYear = "Good Year";
         public const string k_Alliance = "Alliance";

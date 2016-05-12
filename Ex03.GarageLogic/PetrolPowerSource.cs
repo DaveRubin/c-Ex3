@@ -44,7 +44,10 @@ namespace Ex03.GarageLogic
             }
             if (i_amount + m_CurrentFuelAmount > r_MaxFuelAllowed)
             {
-                throw new ValueOutOfRangeException(ExceptionMessages.k_PetrolPowerSourceExceedingMaxFuelAllowed);
+                throw new ValueOutOfRangeException(
+                    ExceptionMessages.k_PetrolPowerSourceExceedingMaxFuelAllowed,
+                    0,
+                    (int)r_MaxFuelAllowed);
             }
 
             m_CurrentFuelAmount += i_amount;

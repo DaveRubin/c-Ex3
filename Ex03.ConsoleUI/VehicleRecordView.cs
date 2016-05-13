@@ -170,7 +170,7 @@ namespace Ex03.ConsoleUI
         private static void GetTruckInfo(out bool i_IsCarryingHazMats, out float i_MaxWeight)
         {
             Console.WriteLine("Please select car color: ");
-            i_IsCarryingHazMats = InputUtils.GetBooleanFromConsole('f', 't');
+            i_IsCarryingHazMats = InputUtils.GetBooleanFromConsole('t', 'f');
 
             Console.Write("Please select number of doors: ");
             i_MaxWeight = InputUtils.GetFloatFromConsole();

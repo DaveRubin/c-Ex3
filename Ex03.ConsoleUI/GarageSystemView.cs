@@ -10,7 +10,7 @@ namespace Ex03.ConsoleUI
         {
             PrintSystemHeader();
             Console.WriteLine(string.Format(GarageSystemText.k_WelcomeScreen));
-            Console.ReadKey();
+            Console.ReadLine();
         }
 
         public static void ShowMenueScreen()

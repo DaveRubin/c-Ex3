@@ -21,6 +21,7 @@ namespace Ex03.ConsoleUI
 
         private void MenueScreen()
         {
+            
             GarageSystemView.ShowMenueScreen();
             //TODO: decide how to not use numbers and use variables instead
             int userInput = InputUtils.GetBoundedIntFromConsole(1, 7);
@@ -58,13 +59,17 @@ namespace Ex03.ConsoleUI
             if (Garage.IsVehicleExist(plateNumber))
             {
                 //change to "in repair" status
+                Console.WriteLine("changed vehicle to in repair status");
                 Garage.ChangeVehicleStatusTo(plateNumber, Garage.eVehicleStatus.BeingFixed);
             }
             else
             {
+                Console.WriteLine("record added successfuly");
                 //add new vehicle
                 Garage.InsertVehicleRecord(newRecord.m_Vehicle, newRecord.m_Owner);
             }
+            Console.ReadLine();
+            MenueScreen();
         }
 
         private void VehiclesByStatusScreen()

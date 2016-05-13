@@ -6,6 +6,7 @@ namespace Ex03.ConsoleUI
 {
     internal class GarageSystemText
     {
+
         public const string k_WelcomeScreen =
 @"======================================================
 
@@ -46,6 +47,9 @@ Choose vehicle from menu:
         public const string k_RequestPhoneNumber = "Please insert your phone number (no separators): ";
         public const string k_RequestLicensePlateNumber = "Please insert a valid plate number (no separators):";
         public const string k_SystemScreenHeader = "Garage System - Version 0.0.0.3";
+
+        public static string k_VehicleRecordGetOwnerName = "Please enter the owners name:";
+        public static string k_VehicleRecordGetOwnerPhoneNumber = "Please enter the owners phne number:";
 
     }
 }

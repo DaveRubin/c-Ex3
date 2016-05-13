@@ -4,6 +4,8 @@ using System.Text;
 
 namespace Ex03.ConsoleUI
 {
+    using Ex03.GarageLogic;
+
     class GarageSystem
     {
         public GarageSystem()
@@ -51,11 +53,18 @@ namespace Ex03.ConsoleUI
         private void NewVehicleScreen()
         {
             GarageSystemView.PrintSystemHeader();
-            GarageSystemView.RequestLicensePlateNumber();
-            string plateNumber = Console.ReadLine();
-            //TODO: read the plate number and validate it, if it's already in use assert, if not create vehicle
-            //and assign new/existing owner
-            
+            VehicleRecord newRecord = VehicleRecordView.GetNewVehicleRecord();
+            string plateNumber = newRecord.m_Vehicle.r_LicenseNumber;
+            if (Garage.IsVehicleExist(plateNumber))
+            {
+                //change to "in repair" status
+                Garage.ChangeVehicleStatusTo(plateNumber, Garage.eVehicleStatus.BeingFixed);
+            }
+            else
+            {
+                //add new vehicle
+                Garage.InsertVehicleRecord(newRecord.m_Vehicle, newRecord.m_Owner);
+            }
         }
 
         private void VehiclesByStatusScreen()

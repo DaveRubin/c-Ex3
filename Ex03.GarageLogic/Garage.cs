@@ -11,6 +11,12 @@ namespace Ex03.GarageLogic
         private static Dictionary<string, VehicleOwner> m_OwnerToPhoneDictionary =
             new Dictionary<string, VehicleOwner>();
 
+
+        public static bool IsVehicleExist(string i_LisenceNumber)
+        {
+            return m_licenseToRecordDictionary.ContainsKey(i_LisenceNumber);
+        }
+
         /// <summary>
         /// Insert new vehicle to garage
         /// in case of an existing vehicle, no new record will be created,
@@ -19,7 +25,7 @@ namespace Ex03.GarageLogic
         /// <param name="i_vehicle"></param>
         /// <param name="i_owner"></param>
         /// <returns>true if a new record was created</returns>
-        internal static bool InsertVehicleRecord(Vehicle i_vehicle, VehicleOwner i_owner)
+        public static bool InsertVehicleRecord(Vehicle i_vehicle, VehicleOwner i_owner)
         {
             bool res = false;
 

@@ -4,6 +4,8 @@ using System.Text;
 
 namespace Ex03.ConsoleUI
 {
+    using Ex03.GarageLogic;
+
     class InputUtils
     {
         public const string k_GetBoundedIntFromConsoleTemplate = "Invalid input, please enter a number between {0} and {1} :";
@@ -134,6 +136,62 @@ namespace Ex03.ConsoleUI
         private static bool StringEqualsChar(string i_string, char i_char)
         {
             return i_string.Length == 1 && i_char == i_string[0];
+        }
+
+        /// <summary>
+        /// Returns the selcted enum index value from enum values
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static int GetEnumSelectionFromType<T>()
+        {
+            bool isEnum = default(T) is Enum;
+            if (!isEnum)
+            {
+                throw new ArgumentException("The given template type is not an enum");
+            }
+
+            Type i_EnumType = typeof(T);
+            string[] valueNames = Enum.GetNames(i_EnumType);
+            foreach (string valueName in valueNames)
+            {
+                Console.WriteLine(string.Format("{1:D} - {0} ", valueName, Enum.Parse(i_EnumType, valueName)));
+            }
+            int selection = InputUtils.GetBoundedIntFromConsole(0, valueNames.Length - 1);
+            
+            return selection;
+        }
+
+        /// <summary>
+        /// Get boolean value from user
+        /// </summary>
+        /// <param name="i_TrueChar"></param>
+        /// <param name="i_FalseChar"></param>
+        /// <returns></returns>
+        public static bool GetBooleanFromConsole(char i_TrueChar, char i_FalseChar)
+        {
+            char[] validChars = { i_TrueChar, i_FalseChar };
+            char selectedChar = GetSepcificCharsFromConsole(validChars);
+            return selectedChar == i_TrueChar;
+        }
+
+        /// <summary>
+        /// Get float from console
+        /// </summary>
+        /// <returns></returns>
+        public static float GetFloatFromConsole()
+        {
+
+            string userInput = Console.ReadLine();
+            float result;
+
+            while (!float.TryParse(userInput, out result))
+            {
+                Console.WriteLine(k_GetIntFromConsoleInvalidMessage);
+                userInput = Console.ReadLine();
+            }
+
+            return result;
         }
     }
 }

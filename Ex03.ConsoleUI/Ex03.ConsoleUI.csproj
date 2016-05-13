@@ -39,6 +39,7 @@
     <Compile Include="CarView.cs" />
     <Compile Include="ElectricPowerSourceView.cs" />
     <Compile Include="GeneralVehicleView.cs" />
+    <Compile Include="InputUtils.cs" />
     <Compile Include="MotorcycleView.cs" />
     <Compile Include="PetrolPowerSourceView.cs" />
     <Compile Include="Program.cs" />

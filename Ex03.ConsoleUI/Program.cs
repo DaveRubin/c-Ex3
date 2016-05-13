@@ -9,7 +9,8 @@ namespace Ex03.ConsoleUI
     {
         public static void Main()
         {
-            Vehicle m = VehicleFactory.CreateElectricMotorcycle("a","bzzzzMobile", "123", Motorcycle.eLicenseType.A, 40);
+            /*
+//            Vehicle m = VehicleFactory.CreateElectricMotorcycle("a","bzzzzMobile", "123", Motorcycle.eLicenseType.A, 40);
 //            m.PowerSource.Charge(-10);
             PetrolMotorCycle m2 = VehicleFactory.CreatePetrolMotorCycle("a", "kawasakaki", "321", Motorcycle.eLicenseType.B1, 40);
 //            m2.PowerSource.Fuel(m2.PowerSource.r_FeulType,-50);
@@ -32,6 +33,8 @@ namespace Ex03.ConsoleUI
 
             Console.WriteLine("Press Enter to Exit...");
             Console.ReadLine();
+             */
+            GarageSystem garageSystem = new GarageSystem();
         }
     }
 }

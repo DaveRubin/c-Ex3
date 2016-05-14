@@ -60,10 +60,30 @@ namespace Ex03.ConsoleUI
             Console.WriteLine(string.Format(GarageSystemText.k_RequestPhoneNumber));
         }
 
-        public static void RequestLicensePlateNumber()
+        public static GarageLogic.VehicleRecord RequestVehicleRecordByLicensePlateNumber()
         {
+            GarageLogic.VehicleRecord result = null;
             PrintSystemHeader();
             Console.WriteLine(string.Format(GarageSystemText.k_RequestLicensePlateNumber));
+            string userInput = Console.ReadLine();
+            if (GarageLogic.Garage.IsVehicleExist(userInput))
+            {
+                result = GarageLogic.Garage.GetRecordByPlateNumber(userInput);
+            }
+            else
+            {
+                Console.WriteLine("Record was not found, press 'q' to main menue or press any other key to continue:");
+                char userInputAfterError = Console.ReadKey().KeyChar;
+                if (userInputAfterError.Equals('q'))
+                {
+                    return result;
+                }
+                else
+                {
+                    RequestVehicleRecordByLicensePlateNumber();
+                }
+            }
+            return result;
         }
 
         public static void PrintSystemHeader()

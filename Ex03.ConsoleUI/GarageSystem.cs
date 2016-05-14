@@ -88,7 +88,30 @@ namespace Ex03.ConsoleUI
         
         private void StatusChangeScreen()
         {
+            GarageSystemView.PrintSystemHeader();
+            GarageLogic.VehicleRecord vehicleRecordToChange = GarageSystemView.RequestVehicleRecordByLicensePlateNumber();
+            // TODO: no way to nullify the enum. how should this variable be initialized?
+            Garage.eVehicleStatus statusToChangeTo = Garage.eVehicleStatus.BeingFixed;
+            if (vehicleRecordToChange != null)
+            {
+                statusToChangeTo = GarageSystemView.RequestStatusFromUser();
+            }
+            else
+            {
+                MenueScreen();
+            }
 
+            try
+            {
+                vehicleRecordToChange.m_Status = statusToChangeTo;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                StatusChangeScreen();
+            }
+            GarageSystemView.PauseForKeyStroke();
+            MenueScreen();
         }
 
         private void InflateVehicleScreen()

@@ -31,7 +31,7 @@ namespace Ex03.ConsoleUI
                     NewVehicleScreen();
                     break;
                 case 2:
-                    VehiclesByStatusScreen();
+                    VehiclesLicenseByStatusScreen();
                     break;
                 case 3:
                     StatusChangeScreen();
@@ -72,9 +72,18 @@ namespace Ex03.ConsoleUI
             MenueScreen();
         }
 
-        private void VehiclesByStatusScreen()
+        private void VehiclesLicenseByStatusScreen()
         {
-
+            GarageSystemView.PrintSystemHeader();
+            Garage.eVehicleStatus statusFilter = GarageSystemView.RequestStatusFromUser();
+            List<string> mathcedEntries = Garage.GetLicensePlatesByStatus(statusFilter);
+            GarageSystemView.PromptResultsDisplay();
+            foreach (string plate in mathcedEntries)
+            {
+                Console.WriteLine(plate);
+            }
+            GarageSystemView.PauseForKeyStroke();
+            MenueScreen();
         }
         
         private void StatusChangeScreen()

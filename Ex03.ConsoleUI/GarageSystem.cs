@@ -116,7 +116,18 @@ namespace Ex03.ConsoleUI
 
         private void InflateVehicleScreen()
         {
-
+            GarageSystemView.ShowInflateVehicleScreen();
+            string plateNumber = Console.ReadLine();
+            bool inflateSucsess = GarageLogic.Garage.FillTiresToMax(plateNumber);
+            if (inflateSucsess == true)
+            {
+                Console.WriteLine(string.Format(GarageSystemText.k_TiresHaveBeenInflatedToMax));
+            }
+            else
+            {
+                Console.WriteLine(string.Format(GarageSystemText.k_TiresHaveNotBeenInflatedToMax));
+            }
+            MenueScreen();            
         }
         
         private void RefuelScreen()

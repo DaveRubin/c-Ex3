@@ -36,7 +36,8 @@ namespace Ex03.ConsoleUI
 
         public static void ShowInflateVehicleScreen()
         {
-
+            PrintSystemHeader();
+            Console.WriteLine(string.Format(GarageSystemText.k_RequestLicensePlateNumber));
         }
 
         public static void ShowRefuelScreen()
@@ -74,11 +75,7 @@ namespace Ex03.ConsoleUI
             {
                 Console.WriteLine("Record was not found, press 'q' to main menue or press any other key to continue:");
                 char userInputAfterError = Console.ReadKey().KeyChar;
-                if (userInputAfterError.Equals('q'))
-                {
-                    return result;
-                }
-                else
+                if (!userInputAfterError.Equals('q'))
                 {
                     RequestVehicleRecordByLicensePlateNumber();
                 }

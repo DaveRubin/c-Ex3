@@ -52,6 +52,8 @@ Choose vehicle from menu:
         public static string k_VehicleRecordGetOwnerPhoneNumber = "Please enter the owners phone number:";
         public const string k_PromptResultDisplay = "Here are the results for your query: \n";
         public const string k_PressAnyKeyToContinue = "Press any key to continue...";
+        public const string k_TiresHaveBeenInflatedToMax = "Vehicle tires have been successfuly infalted to max capacity.";
+        public const string k_TiresHaveNotBeenInflatedToMax = "Vehicle tires have NOT been infalted to max capacity.";
 
     }
 }

@@ -9,6 +9,20 @@ namespace Ex03.ConsoleUI
     internal class CarOwnerView
     {
 
+
+        /// <summary>
+        /// Create a new owner creation dialog
+        /// </summary>
+        /// <returns></returns>
+        public static VehicleOwner GetNewOwnerDialog()
+        {
+            Console.WriteLine(GarageSystemText.k_VehicleRecordGetOwnerName);
+            string ownerName = Console.ReadLine();
+            Console.WriteLine(GarageSystemText.k_VehicleRecordGetOwnerPhoneNumber);
+            string ownerPhoneNumber = Console.ReadLine();
+            return new VehicleOwner(ownerName, ownerPhoneNumber);
+        }
+
         public static string GetVehicleOwnerView(VehicleRecord i_Record)
         {
             return string.Format(

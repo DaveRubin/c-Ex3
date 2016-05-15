@@ -10,6 +10,22 @@ namespace Ex03.ConsoleUI
     {
 
         /// <summary>
+        /// Get common vehicle info needed for factory
+        /// </summary>
+        /// <param name="i_TiresManufacturer"></param>
+        /// <param name="i_ModelName"></param>
+        /// <param name="i_LicenseNumber"></param>
+        public static void GetCommonVehicleInfoDialog(out string i_TiresManufacturer, out string i_ModelName, out string i_LicenseNumber)
+        {
+            Console.Write("Enter tires manufacturer name: ");
+            i_TiresManufacturer = Console.ReadLine();
+            Console.Write("Enter vehicle model name: ");
+            i_ModelName = Console.ReadLine();
+            Console.Write("Enter license number: ");
+            i_LicenseNumber = Console.ReadLine();
+        }
+
+        /// <summary>
         /// Print full details of a vehicle
         /// </summary>
         /// <param name="i_VehicleToPrint"></param>

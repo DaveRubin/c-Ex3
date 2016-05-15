@@ -93,7 +93,7 @@ Choose vehicle from menu:
         public const string k_TiresHaveBeenInflatedToMax = "Vehicle tires have been successfuly infalted to max capacity.";
         public const string k_TiresHaveNotBeenInflatedToMax = "Vehicle tires have NOT been infalted to max capacity.";
         public const string k_RecordMatchCouldNotBeFound = "Could not find record that mathces your input";
-        public const string k_StatusChangeSuccess = "Status changed successfuly";
+        public const string k_StatusChangeSuccess = "Status changed successfuly to {0}";
         public const string k_StatusChangeNoSuccess = "Status changed UNSUCCESSFUL!";
         public const string k_RefuelSuccess = "Refuel successful!";
         public const string k_RefuelNoSuccess = "Refuel UNSUCCESSFUL!";

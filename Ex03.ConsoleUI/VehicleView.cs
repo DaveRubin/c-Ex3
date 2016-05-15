@@ -16,7 +16,7 @@ namespace Ex03.ConsoleUI
         public static void PrintFullDetails(VehicleRecord i_record)
         {
             string basicVehicleView = GeneralVehicleView.GetGeneralVehicleView(i_record.m_Vehicle);
-            string ownerView = CarOwnerView.GetVehicleOwnerView(i_record);
+            string ownerView = VehicleOwnerView.GetVehicleOwnerView(i_record);
             string tiresView = TiresView.GetTiresView(i_record.m_Vehicle.m_Tires);
             string powerSourceView = GetPowerSourceView(i_record.m_Vehicle.r_PowerSource);
             string vehicleSpecificView = GetSpecificVehicleView(i_record.m_Vehicle);

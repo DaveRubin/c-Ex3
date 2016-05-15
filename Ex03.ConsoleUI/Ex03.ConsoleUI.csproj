@@ -35,7 +35,7 @@
     <Compile Include="GarageSystem.cs" />
     <Compile Include="GarageSystemText.cs" />
     <Compile Include="GarageSystemView.cs" />
-    <Compile Include="CarOwnerView.cs" />
+    <Compile Include="VehicleOwnerView.cs" />
     <Compile Include="CarView.cs" />
     <Compile Include="ElectricPowerSourceView.cs" />
     <Compile Include="GeneralVehicleView.cs" />

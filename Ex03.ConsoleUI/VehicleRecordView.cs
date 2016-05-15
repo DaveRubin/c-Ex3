@@ -23,9 +23,9 @@ namespace Ex03.ConsoleUI
         /// <returns></returns>
         public static VehicleOwner GetNewOwnerDialog()
         {
-            CarOwnerView.PrintVehicleRecordGetOwnerName();
+            VehicleOwnerView.PrintVehicleRecordGetOwnerName();
             string ownerName = Console.ReadLine();
-            CarOwnerView.VehicleRecordGetOwnerPhoneNumber();
+            VehicleOwnerView.VehicleRecordGetOwnerPhoneNumber();
             string ownerPhoneNumber = Console.ReadLine();
             return new VehicleOwner(ownerName, ownerPhoneNumber);
         }
@@ -75,7 +75,7 @@ namespace Ex03.ConsoleUI
             return result;
         }
 
-        public static Truck CreateTruckDialog(
+        private static Truck CreateTruckDialog(
             string i_TiresManufacturer,
             string i_ModelName,
             string i_LicenseNumber)
@@ -107,7 +107,7 @@ namespace Ex03.ConsoleUI
             i_MaxWeight = InputUtils.GetFloatFromConsole();
         }
 
-        public static Motorcycle CreateMotorcycleDialog(
+        private static Motorcycle CreateMotorcycleDialog(
             VehicleFactory.eVehicleCatalogue i_SelectedType,
             string i_TiresManufacturer,
             string i_ModelName,
@@ -161,7 +161,7 @@ namespace Ex03.ConsoleUI
         /// <param name="i_TiresManufacturer"></param>
         /// <param name="i_ModelName"></param>
         /// <param name="i_LicenseNumber"></param>
-        public static void GetCommonVehicleInfoDialog(out string i_TiresManufacturer, out string i_ModelName, out string i_LicenseNumber)
+        private static void GetCommonVehicleInfoDialog(out string i_TiresManufacturer, out string i_ModelName, out string i_LicenseNumber)
         {
             VehicleView.PrintGetTiresManufacturerNameMessage();
             i_TiresManufacturer = Console.ReadLine();
@@ -171,7 +171,7 @@ namespace Ex03.ConsoleUI
             i_LicenseNumber = Console.ReadLine();
         }
 
-        public static Car CreateCarDialog(
+        private static Car CreateCarDialog(
             VehicleFactory.eVehicleCatalogue i_SelectedType,
             string i_TiresManufacturer,
             string i_ModelName,
@@ -210,7 +210,7 @@ namespace Ex03.ConsoleUI
         /// </summary>
         /// <param name="i_Color"></param>
         /// <param name="i_DoorsCount"></param>
-        public static void GetCarInfo(out Car.eCarColor i_Color, out int i_DoorsCount)
+        private static void GetCarInfo(out Car.eCarColor i_Color, out int i_DoorsCount)
         {
             CarView.PrintGetColorMessage();
             i_Color = (Car.eCarColor)InputUtils.GetEnumSelectionFromType<Car.eCarColor>();

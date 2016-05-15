@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Ex03.GarageLogic;
 
 namespace Ex03.ConsoleUI
 {
+
     internal class GarageSystemView
     {
         public static void ShowScreen(string i_screenString)
@@ -12,15 +14,15 @@ namespace Ex03.ConsoleUI
             Console.WriteLine(string.Format(i_screenString));
         }
 
-        public static GarageLogic.VehicleRecord RequestVehicleRecordByLicensePlateNumber()
+        public static VehicleRecord RequestVehicleRecordByLicensePlateNumber()
         {
-            GarageLogic.VehicleRecord result = null;
+            VehicleRecord result = null;
             PrintSystemHeader();
-            Console.WriteLine(string.Format(GarageSystemText.k_RequestLicensePlateNumber));
+            PrintRequestLicensePlateNumberMessage();
             string userInput = Console.ReadLine();
-            if (GarageLogic.Garage.IsVehicleExist(userInput))
+            if (Garage.IsVehicleExist(userInput))
             {
-                result = GarageLogic.Garage.GetRecordByPlateNumber(userInput);
+                result = Garage.GetRecordByPlateNumber(userInput);
             }
             else
             {
@@ -40,29 +42,13 @@ namespace Ex03.ConsoleUI
             Console.WriteLine(string.Format(GarageSystemText.k_SystemScreenHeader));
         }
 
-        public static GarageLogic.Garage.eVehicleStatus RequestStatusFromUser()
+        public static void PrintFilterByVehicleStatusMessage()
         {
-            GarageLogic.Garage.eVehicleStatus result = GarageLogic.Garage.eVehicleStatus.BeingFixed;
-            PrintSystemHeader();
             Console.WriteLine(string.Format(GarageSystemText.k_VehicleStatusViewRequest));
-            foreach (string status in Enum.GetNames(typeof(GarageLogic.Garage.eVehicleStatus)))
+            foreach (string status in Enum.GetNames(typeof(Garage.eVehicleStatus)))
             {
                 Console.WriteLine(status);
             }
-            string userInput = Console.ReadLine();
-            try
-            {
-                GarageLogic.Garage.eVehicleStatus statusSelected = (GarageLogic.Garage.eVehicleStatus)Enum.Parse(
-                typeof(GarageLogic.Garage.eVehicleStatus), userInput);
-                result = statusSelected;
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-                PauseForKeyStroke();
-                RequestStatusFromUser();
-            }            
-            return result;
         }
 
         public static void PauseForKeyStroke()
@@ -71,24 +57,94 @@ namespace Ex03.ConsoleUI
             Console.ReadKey();
         }
 
-        public static void PromptResultsDisplay()
+        public static void PromptResultsDisplay(List<string> mathcedEntries)
         {
             Console.WriteLine(string.Format(GarageSystemText.k_PromptResultDisplay));
-        }
-
-        public static void PrintStatusChangedAfterInsertionMessage()
-        {
-            Console.WriteLine(GarageSystemText.k_StatusChangedAfterInsertionMessage);
+            foreach (string plate in mathcedEntries)
+            {
+                Console.WriteLine(plate);
+            }
         }
 
         public static void PrintRecordAddedSuccessfulyMessage()
         {
-            Console.WriteLine(GarageSystemText.k_StatusChangedAfterInsertionMessage);
+            Console.WriteLine(GarageSystemText.k_RecordAddedSuccessfulyMessage);
         }
 
         public static void PrintVehicleRecordSelectVehicleTypeMessage()
         {
             Console.WriteLine(GarageSystemText.k_VehicleRecordSelectVehicleTypeMessage);
+        }
+
+        public static void PrintStatusChangedSuccesfullyMessage(Garage.eVehicleStatus i_NewStatus)
+        {
+            Console.WriteLine(string.Format(GarageSystemText.k_StatusChangeSuccess, i_NewStatus));
+        }
+
+        public static void PrintExceptionMessage(string i_ExceptionMessage)
+        {
+            Console.WriteLine(i_ExceptionMessage);
+        }
+
+        public static void PrintRequestLicensePlateNumberMessage()
+        {
+            Console.WriteLine(string.Format(GarageSystemText.k_RequestLicensePlateNumber));
+        }
+
+        public static void PrintTiresFilledSuccess(bool i_TiresFilledToMax)
+        {
+            if (i_TiresFilledToMax)
+            {
+                Console.WriteLine(string.Format(GarageSystemText.k_TiresHaveBeenInflatedToMax));
+            }
+            else
+            {
+                Console.WriteLine(string.Format(GarageSystemText.k_TiresHaveNotBeenInflatedToMax));
+            }
+        }
+
+        public static void PrintRecordMatchCouldNotBeFount()
+        {
+            Console.WriteLine(string.Format(GarageSystemText.k_RecordMatchCouldNotBeFound));
+        }
+
+        public static void PrintRequestRefuelTypeMessage()
+        {
+            Console.WriteLine(string.Format(GarageSystemText.k_RequestFuleType));
+        }
+
+        public static void PrintRequestRefuelAmountMessage()
+        {
+            Console.WriteLine(string.Format(GarageSystemText.k_RequestAmountToRefule));
+        }
+
+        public static void PrintRefuelOutcomeMessage(bool i_RefuelingSuccessfull)
+        {
+            if (i_RefuelingSuccessfull)
+            {
+                Console.WriteLine(string.Format(GarageSystemText.k_RefuelSuccess));
+            }
+            else
+            {
+                Console.WriteLine(string.Format(GarageSystemText.k_RefuelNoSuccess));
+            }
+        }
+
+        public static void PrintRequestMinutesToChargeMessage()
+        {
+            Console.WriteLine(string.Format(GarageSystemText.k_RequestMinutessToRecharge));
+        }
+
+        public static void PrintRechargeOutcome(bool i_RechargeSuccess)
+        {
+            if (i_RechargeSuccess)
+            {
+                Console.WriteLine(string.Format(GarageSystemText.k_RechargeSuccess));
+            }
+            else
+            {
+                Console.WriteLine(string.Format(GarageSystemText.k_RechargeNoSuccess));
+            }
         }
     }
 }

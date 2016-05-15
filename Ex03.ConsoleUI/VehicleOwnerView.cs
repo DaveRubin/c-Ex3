@@ -6,7 +6,7 @@ namespace Ex03.ConsoleUI
 {
     using Ex03.GarageLogic;
 
-    internal class CarOwnerView
+    internal class VehicleOwnerView
     {
 
 

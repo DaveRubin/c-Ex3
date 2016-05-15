@@ -83,6 +83,7 @@ Choose vehicle from menu:
         public const string k_RequestLicensePlateNumber = "Please insert a valid plate number (no separators):";
         public const string k_RequestFuleType = "Please ipnut with which kind of fuel would you like to fill the tank:";
         public const string k_RequestAmountToRefule = "Please ipnut with how much fuel to fill the tank:";
+        public const string k_RequestMinutessToRecharge = "Please ipnut with how many minutes you would like to recharge:";
         public const string k_SystemScreenHeader = "Garage System - Version 0.0.0.3";
         public const string k_StatusChangeTo = "Changed vehicle to {0} status.";
         public static string k_VehicleRecordGetOwnerName = "Please enter the owners name:";
@@ -96,5 +97,7 @@ Choose vehicle from menu:
         public const string k_StatusChangeNoSuccess = "Status changed UNSUCCESSFUL!";
         public const string k_RefuelSuccess = "Refuel successful!";
         public const string k_RefuelNoSuccess = "Refuel UNSUCCESSFUL!";
+        public const string k_RechargeSuccess = "Recharge successful!";
+        public const string k_RechargeNoSuccess = "Recharge UNSUCCESSFUL!";
     }
 }

@@ -166,7 +166,6 @@ namespace Ex03.ConsoleUI
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                
             }
             finally
             {
@@ -176,7 +175,32 @@ namespace Ex03.ConsoleUI
         }
         private void RechargeScreen()
         {
-
+            GarageSystemView.ShowScreen(GarageSystemText.k_RechargelScreen);
+            Console.WriteLine(string.Format(GarageSystemText.k_RequestLicensePlateNumber));
+            string plateNumber = Console.ReadLine();
+            Console.WriteLine(string.Format(GarageSystemText.k_RequestMinutessToRecharge));
+            string minutessToRechargeString = Console.ReadLine();
+            int minutesToRechargeNumber = int.Parse(minutessToRechargeString);
+            try
+            {
+                if (GarageLogic.Garage.FillBattery(plateNumber,minutesToRechargeNumber))
+                {
+                    Console.WriteLine(string.Format(GarageSystemText.k_RechargeSuccess));
+                }
+                else
+                {
+                    Console.WriteLine(string.Format(GarageSystemText.k_RechargeNoSuccess));
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                GarageSystemView.PauseForKeyStroke();
+                MenueScreen();
+            }
         }
         private void VehicelDetailsScreen()
         {

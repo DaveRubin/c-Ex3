@@ -40,12 +40,49 @@ Choose vehicle from menu:
 4: {3}
 =======================================================
 ";
+        public const string k_InsertNewVehicleScreen =
+@"======================================================
+                INSERT NEW VEHICLE SCREEN
+======================================================
+";
+        public const string k_PrintByStatusScreen =
+@"======================================================
+            PRINT LICENSE BY STATUS SCREEN
+======================================================
+";
+        public const string k_ChangeStatusScreen =
+@"======================================================
+                CHANGE STATUS SCREEN
+======================================================
+";
+        public const string k_InflateToMaxScreen =
+@"======================================================
+                INFLATE TO MAX SCREEN
+======================================================
+";
+        public const string k_RefuelScreen =
+@"======================================================
+                REFUEL SCREEN
+======================================================
+";
+        public const string k_RechargelScreen =
+@"======================================================
+                RECHARGE SCREEN
+======================================================
+";
+        public const string k_PrintVehicleDetailsScreen =
+@"======================================================
+            PRINT VEHICLE DETAILS SCREEN
+======================================================
+";
         public const string k_LicenseByFilterTemplate = "License plate number {0} is in status {1}.";
         public const string k_LicnsePlateRequest = "Please input license plate number:";
         public const string k_VehicleStatusViewRequest = "Please select the vehicle status you would like to see from the following:";
         public const string k_InputErrorAlphabet = "Please insert an alphabetic character: ";
         public const string k_RequestPhoneNumber = "Please insert your phone number (no separators): ";
         public const string k_RequestLicensePlateNumber = "Please insert a valid plate number (no separators):";
+        public const string k_RequestFuleType = "Please ipnut with which kind of fuel would you like to fill the tank:";
+        public const string k_RequestAmountToRefule = "Please ipnut with how much fuel to fill the tank:";
         public const string k_SystemScreenHeader = "Garage System - Version 0.0.0.3";
         public const string k_StatusChangeTo = "Changed vehicle to {0} status.";
         public static string k_VehicleRecordGetOwnerName = "Please enter the owners name:";
@@ -54,6 +91,10 @@ Choose vehicle from menu:
         public const string k_PressAnyKeyToContinue = "Press any key to continue...";
         public const string k_TiresHaveBeenInflatedToMax = "Vehicle tires have been successfuly infalted to max capacity.";
         public const string k_TiresHaveNotBeenInflatedToMax = "Vehicle tires have NOT been infalted to max capacity.";
-
+        public const string k_RecordMatchCouldNotBeFound = "Could not find record that mathces your input";
+        public const string k_StatusChangeSuccess = "Status changed successfuly";
+        public const string k_StatusChangeNoSuccess = "Status changed UNSUCCESSFUL!";
+        public const string k_RefuelSuccess = "Refuel successful!";
+        public const string k_RefuelNoSuccess = "Refuel UNSUCCESSFUL!";
     }
 }

@@ -224,9 +224,30 @@ namespace Ex03.ConsoleUI
                 MenueScreen();
             }
         }
+
         private void VehicelDetailsScreen()
         {
+            GarageSystemView.ShowScreen(GarageSystemText.k_PrintVehicleDetailsScreen);
+            GarageSystemView.PrintRequestLicensePlateNumberMessage();
+            string userInput = Console.ReadLine();
 
+            if (Garage.IsVehicleExist(userInput))
+            {
+               VehicleView.PrintFullDetails(Garage.GetRecordByPlateNumber(userInput));
+            }
+            else
+            {
+                GarageSystemView.PrintRecordNotFoundWithEscapeOptionMessage(GarageKeys.k_EscapeKeyChar);
+
+                char userInputAfterError = Console.ReadKey().KeyChar;
+                if (!userInputAfterError.Equals(GarageKeys.k_EscapeKeyChar))
+                {
+                    VehicelDetailsScreen();
+                }
+            }
+
+            GarageSystemView.PauseForKeyStroke();
+            MenueScreen();
         }
 
 

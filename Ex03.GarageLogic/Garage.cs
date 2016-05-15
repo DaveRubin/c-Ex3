@@ -41,6 +41,10 @@ namespace Ex03.GarageLogic
             return res;
         }
 
+        public static VehicleRecord GetRecordByPlateNumber(string i_plateNumberRequested)
+        {
+            return m_licenseToRecordDictionary[i_plateNumberRequested];
+        }
         /// <summary>
         /// Get all license numbers for vehicles that match certain status
         /// </summary>

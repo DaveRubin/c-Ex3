@@ -39,11 +39,13 @@
     <Compile Include="CarView.cs" />
     <Compile Include="ElectricPowerSourceView.cs" />
     <Compile Include="GeneralVehicleView.cs" />
+    <Compile Include="InputUtils.cs" />
     <Compile Include="MotorcycleView.cs" />
     <Compile Include="PetrolPowerSourceView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="TiresView.cs" />
     <Compile Include="TruckView.cs" />
+    <Compile Include="VehicleRecordView.cs" />
     <Compile Include="VehicleView.cs" />
     <Compile Include="VehicleViewTextTemplates.cs" />
   </ItemGroup>
@@ -53,6 +55,9 @@
       <HintPath>..\Ex03.GarageLogic\Ex03.GarageLogic.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="testInput.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,7 +9,7 @@ namespace Ex03.GarageLogic
         public readonly int r_DoorsCount;
         public readonly eCarColor r_Color;
 
-        private static List<int> s_ValidVehicleDoorsList = new List<int>(){2,3,4,5};
+        public static readonly List<int> s_ValidVehicleDoorsList = new List<int>(){2,3,4,5};
 
         /// <summary>
         /// Create a new car

@@ -8,26 +8,33 @@ namespace Ex03.ConsoleUI
     {
         public static void ShowWelcomeScreen()
         {
+            PrintSystemHeader();
             Console.WriteLine(string.Format(GarageSystemText.k_WelcomeScreen));
-            Console.ReadKey();
+            Console.ReadLine();
         }
 
         public static void ShowMenueScreen()
         {
+            PrintSystemHeader();
             Console.WriteLine(string.Format(GarageSystemText.k_Menue));
         }
 
-        public static void ShowVehiclesByLicenseScreen()
+        public static void ShowNewVehicleScreen()
         {
-
+            
         }
 
-        public static void ShowNewVehicleScreen()
+        public static void ShowVehiclesByStatusScreen()
         {
 
         }
 
         public static void ShowStatusChangeScreen()
+        {
+
+        }
+
+        public static void ShowInflateVehicleScreen()
         {
 
         }
@@ -42,9 +49,27 @@ namespace Ex03.ConsoleUI
 
         }
 
-        public static void ShowVehicelDetailsScren()
+        public static void ShowVehicelDetailsScreen()
         {
 
+        }
+
+        public static void RequsetPhoneNumber()
+        {
+            PrintSystemHeader();
+            Console.WriteLine(string.Format(GarageSystemText.k_RequestPhoneNumber));
+        }
+
+        public static void RequestLicensePlateNumber()
+        {
+            PrintSystemHeader();
+            Console.WriteLine(string.Format(GarageSystemText.k_RequestLicensePlateNumber));
+        }
+
+        public static void PrintSystemHeader()
+        {
+            Console.Clear();
+            Console.WriteLine(string.Format(GarageSystemText.k_SystemScreenHeader));
         }
 
     }

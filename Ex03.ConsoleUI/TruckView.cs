@@ -17,9 +17,9 @@ namespace Ex03.ConsoleUI
                 i_Truck.r_MaxWeightAllowed);
         }
 
-        public static void PrintEnterIsHazMatMessage()
+        public static void PrintEnterIsHazMatMessage(char i_TrueChar,char i_FalseChar)
         {
-            Console.WriteLine(GarageSystemText.k_TruckEnterIsHazMatMessage);
+            Console.WriteLine(GarageSystemText.k_TruckEnterIsHazMatMessageTemplate, i_TrueChar, i_FalseChar);
         }
 
         public static void PrintEnterMaxWeightMessage()

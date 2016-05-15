@@ -86,7 +86,7 @@ namespace Ex03.ConsoleUI
         private void StatusChangeScreen()
         {
             GarageSystemView.ShowScreen(GarageSystemText.k_ChangeStatusScreen);
-            VehicleRecord vehicleRecordToChange = GarageSystemView.RequestVehicleRecordByLicensePlateNumber();
+            VehicleRecord vehicleRecordToChange = RequestVehicleRecordByLicensePlateNumber();
             // TODO: no way to nullify the enum. how should this variable be initialized?
             Garage.eVehicleStatus statusToChangeTo = Garage.eVehicleStatus.BeingFixed;
             if (vehicleRecordToChange != null)
@@ -110,6 +110,32 @@ namespace Ex03.ConsoleUI
             }
             GarageSystemView.PauseForKeyStroke();
             MenueScreen();
+        }
+
+        private VehicleRecord RequestVehicleRecordByLicensePlateNumber()
+        {
+
+            VehicleRecord result = null;
+            GarageSystemView.PrintSystemHeader();
+            GarageSystemView.PrintRequestLicensePlateNumberMessage();
+
+            string userInput = Console.ReadLine();
+            if (Garage.IsVehicleExist(userInput))
+            {
+                result = Garage.GetRecordByPlateNumber(userInput);
+            }
+            else
+            {
+                GarageSystemView.PrintRecordNotFoundWithEscapeOptionMessage(GarageKeys.k_EscapeKeyChar);
+
+                char userInputAfterError = Console.ReadKey().KeyChar;
+                if (!userInputAfterError.Equals(GarageKeys.k_EscapeKeyChar))
+                {
+                    result = RequestVehicleRecordByLicensePlateNumber();
+                }
+            }
+
+            return result;
         }
 
         private void InflateVehicleScreen()
@@ -146,8 +172,8 @@ namespace Ex03.ConsoleUI
             PetrolPowerSource.eFuelType selectedFuelType = 
                 (PetrolPowerSource.eFuelType)InputUtils.GetEnumSelectionFromType<PetrolPowerSource.eFuelType>();
             GarageSystemView.PrintRequestRefuelAmountMessage();
-            string amountToFillString = Console.ReadLine();
-            float amountToFillNumber = float.Parse(amountToFillString);
+            float amountToFillNumber = InputUtils.GetFloatFromConsole();
+
             try
             {
                 if (Garage.FillGasTank(plateNumber, selectedFuelType, amountToFillNumber))

@@ -100,8 +100,8 @@ namespace Ex03.ConsoleUI
         /// <param name="i_MaxWeight"></param>
         private static void GetTruckInfo(out bool i_IsCarryingHazMats, out float i_MaxWeight)
         {
-            TruckView.PrintEnterIsHazMatMessage();
-            i_IsCarryingHazMats = InputUtils.GetBooleanFromConsole('t', 'f');
+            TruckView.PrintEnterIsHazMatMessage(GarageKeys.k_True, GarageKeys.k_False);
+            i_IsCarryingHazMats = InputUtils.GetBooleanFromConsole(GarageKeys.k_True, GarageKeys.k_False);
 
             TruckView.PrintEnterMaxWeightMessage();
             i_MaxWeight = InputUtils.GetFloatFromConsole();

@@ -14,28 +14,6 @@ namespace Ex03.ConsoleUI
             Console.WriteLine(string.Format(i_screenString));
         }
 
-        public static VehicleRecord RequestVehicleRecordByLicensePlateNumber()
-        {
-            VehicleRecord result = null;
-            PrintSystemHeader();
-            PrintRequestLicensePlateNumberMessage();
-            string userInput = Console.ReadLine();
-            if (Garage.IsVehicleExist(userInput))
-            {
-                result = Garage.GetRecordByPlateNumber(userInput);
-            }
-            else
-            {
-                Console.WriteLine("Record was not found, press 'q' to main menue or press any other key to continue:");
-                char userInputAfterError = Console.ReadKey().KeyChar;
-                if (!userInputAfterError.Equals('q'))
-                {
-                    RequestVehicleRecordByLicensePlateNumber();
-                }
-            }
-            return result;
-        }
-
         public static void PrintSystemHeader()
         {
             Console.Clear();
@@ -145,6 +123,11 @@ namespace Ex03.ConsoleUI
             {
                 Console.WriteLine(string.Format(GarageSystemText.k_RechargeNoSuccess));
             }
+        }
+
+        public static void PrintRecordNotFoundWithEscapeOptionMessage(char i_EscapeKeyChar)
+        {
+            Console.WriteLine(GarageSystemText.k_RecordNotFoundWithEscapeOptionTemplate, i_EscapeKeyChar);
         }
     }
 }

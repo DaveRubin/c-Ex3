@@ -110,7 +110,8 @@ Choose vehicle from menu:
         public static string k_MotorcycleEnterEngineVolumeMessage = "Enter engine volume: ";
         public static string k_MotorcycleEnterLicenseMessage = "Enter License type: ";
         public static string k_VehicleRecordSelectVehicleTypeMessage = "select vehicle type:";
-        public static string k_TruckEnterIsHazMatMessage = "Is carrying harardouse materials?";
+        public static string k_TruckEnterIsHazMatMessageTemplate = "Is carrying harardouse materials? {0} for yes, {1} for no:";
         public static string k_TruckEnterMaxWeightMessage = "Enter max weight allowed";
+        public static string k_RecordNotFoundWithEscapeOptionTemplate = "Record was not found, press '{0}' to main menue or press any other key to continue:";
     }
 }

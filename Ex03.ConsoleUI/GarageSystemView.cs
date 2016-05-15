@@ -72,5 +72,19 @@ namespace Ex03.ConsoleUI
             Console.WriteLine(string.Format(GarageSystemText.k_SystemScreenHeader));
         }
 
+        public static void PrintStatusChangedAfterInsertionMessage()
+        {
+            Console.WriteLine(GarageSystemText.k_StatusChangedAfterInsertionMessage);
+        }
+
+        public static void PrintRecordAddedSuccessfulyMessage()
+        {
+            Console.WriteLine(GarageSystemText.k_StatusChangedAfterInsertionMessage);
+        }
+
+        public static void PrintVehicleRecordSelectVehicleTypeMessage()
+        {
+            Console.WriteLine(GarageSystemText.k_VehicleRecordSelectVehicleTypeMessage);
+        }
     }
 }

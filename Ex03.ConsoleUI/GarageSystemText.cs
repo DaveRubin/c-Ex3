@@ -50,6 +50,18 @@ Choose vehicle from menu:
 
         public static string k_VehicleRecordGetOwnerName = "Please enter the owners name:";
         public static string k_VehicleRecordGetOwnerPhoneNumber = "Please enter the owners phne number:";
+        public static string k_CarInfoGetColorMessage = "Please select car color: ";
+        public static string k_CarInfoGetDoorsCountMessage = "Please select number of doors: ";
 
+        public static string k_StatusChangedAfterInsertionMessage = "changed vehicle to in repair status";
+        public static string k_RecordAddedSuccessfulyMessage = "record added successfuly";
+        public static string k_VehicleGetLicenseNumberMessage = "Enter license number: ";
+        public static string k_VehicleGetVehicleModelNameMessage = "Enter vehicle model name: ";
+        public static string k_VehicleGetTiresManufacturerNameMessage = "Enter tires manufacturer name: ";
+        public static string k_MotorcycleEnterEngineVolumeMessage = "Enter engine volume: ";
+        public static string k_MotorcycleEnterLicenseMessage = "Enter License type: ";
+        public static string k_VehicleRecordSelectVehicleTypeMessage = "select vehicle type:";
+        public static string k_TruckEnterIsHazMatMessage = "Is carrying harardouse materials?";
+        public static string k_TruckEnterMaxWeightMessage = "Enter max weight allowed";
     }
 }

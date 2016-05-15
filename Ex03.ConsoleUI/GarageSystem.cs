@@ -59,13 +59,13 @@ namespace Ex03.ConsoleUI
             if (Garage.IsVehicleExist(plateNumber))
             {
                 //change to "in repair" status
-                Console.WriteLine("changed vehicle to in repair status");
+                GarageSystemView.PrintStatusChangedAfterInsertionMessage();
                 Garage.ChangeVehicleStatusTo(plateNumber, Garage.eVehicleStatus.BeingFixed);
             }
             else
             {
-                Console.WriteLine("record added successfuly");
                 //add new vehicle
+                GarageSystemView.PrintRecordAddedSuccessfulyMessage();
                 Garage.InsertVehicleRecord(newRecord.m_Vehicle, newRecord.m_Owner);
             }
             Console.ReadLine();

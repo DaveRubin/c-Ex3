@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Ex03.ConsoleUI
 {
@@ -8,7 +6,6 @@ namespace Ex03.ConsoleUI
 
     internal class TruckView
     {
-
         public static string GetTruckView(Truck i_Truck)
         {
             return string.Format(
@@ -17,7 +14,7 @@ namespace Ex03.ConsoleUI
                 i_Truck.r_MaxWeightAllowed);
         }
 
-        public static void PrintEnterIsHazMatMessage(char i_TrueChar,char i_FalseChar)
+        public static void PrintEnterIsHazMatMessage(char i_TrueChar, char i_FalseChar)
         {
             Console.WriteLine(GarageSystemText.k_TruckEnterIsHazMatMessageTemplate, i_TrueChar, i_FalseChar);
         }

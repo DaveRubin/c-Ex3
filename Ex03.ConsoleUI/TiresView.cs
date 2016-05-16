@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace Ex03.ConsoleUI
@@ -16,7 +15,8 @@ namespace Ex03.ConsoleUI
         public static string GetTiresView(List<Tire> i_Tires)
         {
             StringBuilder result = new StringBuilder();
-            //Append header
+
+            // Append header
             result.Append(
                 string.Format(
                     GarageSystemText.k_TirePairTemplate,
@@ -28,8 +28,8 @@ namespace Ex03.ConsoleUI
                     GarageSystemText.k_TireColumnUnderlineText,
                     GarageSystemText.k_TireColumnUnderlineText));
 
-            //devide tires to pairs and print 
-            for (int i = 0; i < i_Tires.Count ; i++)
+            // devide tires to pairs and print 
+            for (int i = 0; i < i_Tires.Count; i++)
             {
                 Tire tire = i_Tires[i];
                 string manufacturerName = tire.r_ManufacturerName;

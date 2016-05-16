@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Ex03.ConsoleUI
 {
@@ -8,7 +6,6 @@ namespace Ex03.ConsoleUI
 
     internal class VehicleView
     {
-
         /// <summary>
         /// Print full details of a vehicle
         /// </summary>
@@ -29,7 +26,6 @@ namespace Ex03.ConsoleUI
                     tiresView,
                     powerSourceView,
                     vehicleSpecificView));
-
         }
 
         /// <summary>
@@ -53,7 +49,7 @@ namespace Ex03.ConsoleUI
         /// <returns></returns>
         private static string GetPowerSourceView(PowerSource i_PowerSource)
         {
-            string result = "";
+            string result = string.Empty;
             if (i_PowerSource.GetType() == typeof(ElectricPowerSource))
             {
                 result = ElectricPowerSourceView.GetElectricPowerSourceView(i_PowerSource as ElectricPowerSource);
@@ -62,6 +58,7 @@ namespace Ex03.ConsoleUI
             {
                 result = PetrolPowerSourceView.GetPetrolPowerSourceView(i_PowerSource as PetrolPowerSource);
             }
+
             return result;
         }
 
@@ -71,7 +68,7 @@ namespace Ex03.ConsoleUI
         /// <param name="i_VehicleToPrint"></param>
         private static string GetSpecificVehicleView(Vehicle i_VehicleToPrint)
         {
-            string result = "";
+            string result = string.Empty;
             Type typeOfVehicle = i_VehicleToPrint.GetType();
             if (typeOfVehicle.IsSubclassOf(typeof(Motorcycle)))
             {
@@ -85,6 +82,7 @@ namespace Ex03.ConsoleUI
             {
                 result = TruckView.GetTruckView(i_VehicleToPrint as Truck);
             }
+
             return result;
         }
 

@@ -11,7 +11,7 @@ namespace Ex03.ConsoleUI
         public static string GetElectricPowerSourceView(ElectricPowerSource i_PowerSource)
         {
             return string.Format(
-                VehicleViewTextTemplates.k_ElectricPowerSourceViewTemplate,
+                GarageSystemText.k_ElectricPowerSourceViewTemplate,
                 i_PowerSource.HoursLeft,
                 i_PowerSource.r_MaxHours);
         }

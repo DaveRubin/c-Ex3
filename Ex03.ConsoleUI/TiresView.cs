@@ -19,14 +19,14 @@ namespace Ex03.ConsoleUI
             //Append header
             result.Append(
                 string.Format(
-                    VehicleViewTextTemplates.k_TirePairTemplate,
-                    VehicleViewTextTemplates.k_TireManufecturerHeaderText,
-                    VehicleViewTextTemplates.k_TireAirPressureHeaderText));
+                    GarageSystemText.k_TirePairTemplate,
+                    GarageSystemText.k_TireManufecturerHeaderText,
+                    GarageSystemText.k_TireAirPressureHeaderText));
             result.Append(
                 string.Format(
-                    VehicleViewTextTemplates.k_TirePairTemplate,
-                    VehicleViewTextTemplates.k_TireColumnUnderlineText,
-                    VehicleViewTextTemplates.k_TireColumnUnderlineText));
+                    GarageSystemText.k_TirePairTemplate,
+                    GarageSystemText.k_TireColumnUnderlineText,
+                    GarageSystemText.k_TireColumnUnderlineText));
 
             //devide tires to pairs and print 
             for (int i = 0; i < i_Tires.Count ; i++)
@@ -34,11 +34,11 @@ namespace Ex03.ConsoleUI
                 Tire tire = i_Tires[i];
                 string manufacturerName = tire.r_ManufacturerName;
                 string airPressure = string.Format(
-                    VehicleViewTextTemplates.k_TireAirPressureTemplate,
+                    GarageSystemText.k_TireAirPressureTemplate,
                     tire.CurrentAirPressure,
                     tire.r_MaxAirPressure);
 
-                result.Append(string.Format(VehicleViewTextTemplates.k_TirePairTemplate, manufacturerName, airPressure));
+                result.Append(string.Format(GarageSystemText.k_TirePairTemplate, manufacturerName, airPressure));
             }
 
             return result.ToString();

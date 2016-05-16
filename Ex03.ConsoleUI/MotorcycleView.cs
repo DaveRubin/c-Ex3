@@ -12,7 +12,7 @@ namespace Ex03.ConsoleUI
         public static string GetMotorCycleView(Motorcycle i_Motorcycle)
         {
             return string.Format(
-                VehicleViewTextTemplates.k_MotorcycleViewTemplate,
+                GarageSystemText.k_MotorcycleViewTemplate,
                 i_Motorcycle.r_LicenseType,
                 i_Motorcycle.r_EngineVolume);
         }

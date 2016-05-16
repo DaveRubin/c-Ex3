@@ -6,12 +6,34 @@ namespace Ex03.ConsoleUI
 {
     using Ex03.GarageLogic;
 
-    class GarageSystem
+    internal class GarageSystem
     {
         public GarageSystem()
         {
             WelcomeScreen();
             MenueScreen();
+        }
+
+        private static Garage.eVehicleStatus RequestStatusFromUser()
+        {
+            Garage.eVehicleStatus result = Garage.eVehicleStatus.BeingFixed;
+            GarageSystemView.PrintSystemHeader();
+            GarageSystemView.PrintFilterByVehicleStatusMessage();
+            string userInput = Console.ReadLine();
+            try
+            {
+                Garage.eVehicleStatus statusSelected = (Garage.eVehicleStatus)Enum.Parse(
+                 typeof(Garage.eVehicleStatus), userInput);
+                result = statusSelected;
+            }
+            catch (ArgumentException ex)
+            {
+                GarageSystemView.PrintExceptionMessage(ex.Message);
+                GarageSystemView.PauseForKeyStroke();
+                RequestStatusFromUser();
+            }
+
+            return result;
         }
 
         private void WelcomeScreen()
@@ -21,10 +43,10 @@ namespace Ex03.ConsoleUI
         }
 
         private void MenueScreen()
-        {
-            
+        { 
             GarageSystemView.ShowScreen(GarageSystemText.k_Menue);
-            //TODO: decide how to not use numbers and use variables instead
+
+            // TODO: decide how to not use numbers and use variables instead
             int userInput = InputUtils.GetBoundedIntFromConsole(1, 7);
             switch (userInput)
             {
@@ -46,6 +68,7 @@ namespace Ex03.ConsoleUI
                 case 6:
                     RechargeScreen();
                     break;
+
                 case 7:
                     VehicelDetailsScreen();
                     break;
@@ -66,19 +89,21 @@ namespace Ex03.ConsoleUI
                 GarageSystemView.PauseForKeyStroke();
                 NewVehicleScreen();
             }
+
             string plateNumber = newRecord.m_Vehicle.r_LicenseNumber;
             if (Garage.IsVehicleExist(plateNumber))
             {
-                //change to "in repair" status
+                // change to "in repair" status
                 Garage.ChangeVehicleStatusTo(plateNumber, Garage.eVehicleStatus.BeingFixed);
                 GarageSystemView.PrintStatusChangedSuccesfullyMessage(Garage.eVehicleStatus.BeingFixed);
             }
             else
             {
-                //add new vehicle
+                // add new vehicle
                 GarageSystemView.PrintRecordAddedSuccessfulyMessage();
                 Garage.InsertVehicleRecord(newRecord.m_Vehicle, newRecord.m_Owner);
             }
+
             Console.ReadLine();
             MenueScreen();
         }
@@ -97,6 +122,7 @@ namespace Ex03.ConsoleUI
         {
             GarageSystemView.ShowScreen(GarageSystemText.k_ChangeStatusScreen);
             VehicleRecord vehicleRecordToChange = RequestVehicleRecordByLicensePlateNumber();
+
             // TODO: no way to nullify the enum. how should this variable be initialized?
             Garage.eVehicleStatus statusToChangeTo = Garage.eVehicleStatus.BeingFixed;
             if (vehicleRecordToChange != null)
@@ -118,17 +144,16 @@ namespace Ex03.ConsoleUI
                 GarageSystemView.PrintExceptionMessage(ex.Message);
                 StatusChangeScreen();
             }
+
             GarageSystemView.PauseForKeyStroke();
             MenueScreen();
         }
 
         private VehicleRecord RequestVehicleRecordByLicensePlateNumber()
         {
-
             VehicleRecord result = null;
             GarageSystemView.PrintSystemHeader();
             GarageSystemView.PrintRequestLicensePlateNumberMessage();
-
             string userInput = Console.ReadLine();
             if (Garage.IsVehicleExist(userInput))
             {
@@ -137,7 +162,6 @@ namespace Ex03.ConsoleUI
             else
             {
                 GarageSystemView.PrintRecordNotFoundWithEscapeOptionMessage(GarageKeys.k_EscapeKeyChar);
-
                 char userInputAfterError = Console.ReadKey().KeyChar;
                 if (!userInputAfterError.Equals(GarageKeys.k_EscapeKeyChar))
                 {
@@ -169,6 +193,7 @@ namespace Ex03.ConsoleUI
             {
                 GarageSystemView.PrintRecordMatchCouldNotBeFount();
             }
+
             GarageSystemView.PauseForKeyStroke();
             MenueScreen();            
         }
@@ -215,7 +240,7 @@ namespace Ex03.ConsoleUI
             int minutesToRechargeNumber = InputUtils.GetIntFromConsole();
             try
             {
-                if (Garage.FillBattery(plateNumber,minutesToRechargeNumber))
+                if (Garage.FillBattery(plateNumber, minutesToRechargeNumber))
                 {
                     GarageSystemView.PrintRechargeOutcome(true);
                 }
@@ -240,7 +265,6 @@ namespace Ex03.ConsoleUI
             GarageSystemView.ShowScreen(GarageSystemText.k_PrintVehicleDetailsScreen);
             GarageSystemView.PrintRequestLicensePlateNumberMessage();
             string userInput = Console.ReadLine();
-
             if (Garage.IsVehicleExist(userInput))
             {
                VehicleView.PrintFullDetails(Garage.GetRecordByPlateNumber(userInput));
@@ -258,31 +282,6 @@ namespace Ex03.ConsoleUI
 
             GarageSystemView.PauseForKeyStroke();
             MenueScreen();
-        }
-
-
-        private static Garage.eVehicleStatus RequestStatusFromUser()
-        {
-            Garage.eVehicleStatus result = Garage.eVehicleStatus.BeingFixed;
-
-            GarageSystemView.PrintSystemHeader();
-            GarageSystemView.PrintFilterByVehicleStatusMessage();
-            string userInput = Console.ReadLine();
-
-            try
-            {
-                Garage.eVehicleStatus statusSelected = (Garage.eVehicleStatus)Enum.Parse(
-                 typeof(Garage.eVehicleStatus), userInput);
-                result = statusSelected;
-            }
-            catch (ArgumentException ex)
-            {
-                GarageSystemView.PrintExceptionMessage(ex.Message);
-                GarageSystemView.PauseForKeyStroke();
-                RequestStatusFromUser();
-            }
-
-            return result;
         }
     }
 }

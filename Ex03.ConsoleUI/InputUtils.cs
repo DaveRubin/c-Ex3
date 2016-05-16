@@ -15,14 +15,14 @@ namespace Ex03.ConsoleUI
         public const string k_GetSingleCharFromConsoleInvalidInputMessage = "Invalid input, Please enter a single character:";
         public const string k_GetBoundedIntOrQuitFromConsoleInvalidTemplate = "Invalid input, please enter a number between {0} to {1} ,or {2} to quit";
 
-        public static int GetBoundedIntFromConsole(int i_min, int i_max)
+        public static int GetBoundedIntFromConsole(int i_Min, int i_Max)
         {
             int result = GetIntFromConsole();
 
-            while (!IntInBounds(result, i_min, i_max))
+            while (!IntInBounds(result, i_Min, i_Max))
             {
                 Console.WriteLine(
-                    string.Format(k_GetBoundedIntFromConsoleTemplate, i_min, i_max));
+                    string.Format(k_GetBoundedIntFromConsoleTemplate, i_Min, i_Max));
                 result = GetIntFromConsole();
             }
 
@@ -47,14 +47,14 @@ namespace Ex03.ConsoleUI
         /// Gets a single  char from console, 
         /// if validChars are given, then only those characters will count as valid input
         /// </summary>
-        /// <param name="validChars"></param>
+        /// <param name="i_ValidChars"></param>
         /// <returns></returns>
-        public static char GetSepcificCharsFromConsole(params char[] validChars)
+        public static char GetSepcificCharsFromConsole(params char[] i_ValidChars)
         {
             char result;
-            if (validChars.Length > 0)
+            if (i_ValidChars.Length > 0)
             {
-                string validcharsString = new string(validChars);
+                string validcharsString = new string(i_ValidChars);
                 result = GetSingleCharFromConsole();
 
                 while (validcharsString.IndexOf(result) == -1)
@@ -88,7 +88,7 @@ namespace Ex03.ConsoleUI
             return userInput[0];
         }
 
-        public static int GetBoundedIntOrQuitFromConsole(int i_min, int i_max, char i_QuitGameChar, ref bool io_isQuitSelected)
+        public static int GetBoundedIntOrQuitFromConsole(int i_Min, int i_Max, char i_QuitGameChar, ref bool io_IsQuitSelected)
         {
             string userInput = Console.ReadLine();
             int result = -1;
@@ -96,20 +96,20 @@ namespace Ex03.ConsoleUI
             // string equals the quit char
             // or an int in the wanted bounds
             while (!(StringEqualsChar(userInput, i_QuitGameChar) || (int.TryParse(userInput, out result)
-                                                                     && IntInBounds(result, i_min, i_max)))) 
+                                                                     && IntInBounds(result, i_Min, i_Max)))) 
             {
                 Console.WriteLine(
                     string.Format(
                         k_GetBoundedIntOrQuitFromConsoleInvalidTemplate,
-                        i_min,
-                        i_max,
+                        i_Min,
+                        i_Max,
                         i_QuitGameChar));
                 userInput = Console.ReadLine();
             }
 
             if (StringEqualsChar(userInput, i_QuitGameChar))
             {
-                io_isQuitSelected = true;
+                io_IsQuitSelected = true;
             }
 
             return result;
@@ -118,24 +118,24 @@ namespace Ex03.ConsoleUI
         /// <summary>
         /// Check if number is between min and max
         /// </summary>
-        /// <param name="i_number"></param>
-        /// <param name="i_min"></param>
-        /// <param name="i_max"></param>
+        /// <param name="i_Number"></param>
+        /// <param name="i_Min"></param>
+        /// <param name="i_Max"></param>
         /// <returns></returns>
-        private static bool IntInBounds(int i_number, int i_min, int i_max)
+        private static bool IntInBounds(int i_Number, int i_Min, int i_Max)
         {
-            return i_min <= i_number && i_number <= i_max;
+            return i_Min <= i_Number && i_Number <= i_Max;
         }
 
         /// <summary>
         /// Check if a string is a specific single char
         /// </summary>
-        /// <param name="i_string"></param>
-        /// <param name="i_char"></param>
+        /// <param name="i_String"></param>
+        /// <param name="i_Char"></param>
         /// <returns></returns>
-        private static bool StringEqualsChar(string i_string, char i_char)
+        private static bool StringEqualsChar(string i_String, char i_Char)
         {
-            return i_string.Length == 1 && i_char == i_string[0];
+            return i_String.Length == 1 && i_Char == i_String[0];
         }
 
         /// <summary>

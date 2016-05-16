@@ -85,15 +85,15 @@ namespace Ex03.ConsoleUI
         /// <summary>
         /// Get truck additional info needed for factory
         /// </summary>
-        /// <param name="i_IsCarryingHazMats"></param>
-        /// <param name="i_MaxWeight"></param>
-        private static void GetTruckInfo(out bool i_IsCarryingHazMats, out float i_MaxWeight)
+        /// <param name="o_IsCarryingHazMats"></param>
+        /// <param name="o_MaxWeight"></param>
+        private static void GetTruckInfo(out bool o_IsCarryingHazMats, out float o_MaxWeight)
         {
             TruckView.PrintEnterIsHazMatMessage(GarageKeys.k_True, GarageKeys.k_False);
-            i_IsCarryingHazMats = InputUtils.GetBooleanFromConsole(GarageKeys.k_True, GarageKeys.k_False);
+            o_IsCarryingHazMats = InputUtils.GetBooleanFromConsole(GarageKeys.k_True, GarageKeys.k_False);
 
             TruckView.PrintEnterMaxWeightMessage();
-            i_MaxWeight = InputUtils.GetFloatFromConsole();
+            o_MaxWeight = InputUtils.GetFloatFromConsole();
         }
 
         private static Motorcycle CreateMotorcycleDialog(
@@ -133,34 +133,34 @@ namespace Ex03.ConsoleUI
         /// <summary>
         /// Get motorcycle additional info needed for factory
         /// </summary>
-        /// <param name="i_LicenseType"></param>
-        /// <param name="i_EngineVolume"></param>
-        private static void GetMotorcycleInfo(out Motorcycle.eLicenseType i_LicenseType, out int i_EngineVolume)
+        /// <param name="o_LicenseType"></param>
+        /// <param name="o_EngineVolume"></param>
+        private static void GetMotorcycleInfo(out Motorcycle.eLicenseType o_LicenseType, out int o_EngineVolume)
         {
             MotorcycleView.PrintEnterLicenseMessage();
-            i_LicenseType = (Motorcycle.eLicenseType)InputUtils.GetEnumSelectionFromType<Motorcycle.eLicenseType>();
+            o_LicenseType = (Motorcycle.eLicenseType)InputUtils.GetEnumSelectionFromType<Motorcycle.eLicenseType>();
 
             MotorcycleView.PrintEnterEngineVolumeMessage();
-            i_EngineVolume = InputUtils.GetIntFromConsole();
+            o_EngineVolume = InputUtils.GetIntFromConsole();
         }
 
         /// <summary>
         /// Get common vehicle info needed for factory
         /// </summary>
-        /// <param name="i_TiresManufacturer"></param>
-        /// <param name="i_ModelName"></param>
-        /// <param name="i_LicenseNumber"></param>
+        /// <param name="o_TiresManufacturer"></param>
+        /// <param name="o_ModelName"></param>
+        /// <param name="o_LicenseNumber"></param>
         private static void GetCommonVehicleInfoDialog(
-            out string i_TiresManufacturer,
-            out string i_ModelName,
-            out string i_LicenseNumber)
+            out string o_TiresManufacturer,
+            out string o_ModelName,
+            out string o_LicenseNumber)
         {
             VehicleView.PrintGetTiresManufacturerNameMessage();
-            i_TiresManufacturer = Console.ReadLine();
+            o_TiresManufacturer = Console.ReadLine();
             VehicleView.PrintGetVehicleModelNameMessage();
-            i_ModelName = Console.ReadLine();
+            o_ModelName = Console.ReadLine();
             VehicleView.PrintGetLicenseNumberMessage();
-            i_LicenseNumber = Console.ReadLine();
+            o_LicenseNumber = Console.ReadLine();
         }
 
         private static Car CreateCarDialog(
@@ -200,15 +200,15 @@ namespace Ex03.ConsoleUI
         /// <summary>
         /// Get car info needed for factory from user
         /// </summary>
-        /// <param name="i_Color"></param>
-        /// <param name="i_DoorsCount"></param>
-        private static void GetCarInfo(out Car.eCarColor i_Color, out int i_DoorsCount)
+        /// <param name="o_Color"></param>
+        /// <param name="o_DoorsCount"></param>
+        private static void GetCarInfo(out Car.eCarColor o_Color, out int o_DoorsCount)
         {
             CarView.PrintGetColorMessage();
-            i_Color = (Car.eCarColor)InputUtils.GetEnumSelectionFromType<Car.eCarColor>();
+            o_Color = (Car.eCarColor)InputUtils.GetEnumSelectionFromType<Car.eCarColor>();
 
             CarView.GetDoorsCountMessage();
-            i_DoorsCount = InputUtils.GetIntFromConsole();
+            o_DoorsCount = InputUtils.GetIntFromConsole();
         }
     }
 }

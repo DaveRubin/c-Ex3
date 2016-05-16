@@ -7,10 +7,10 @@ namespace Ex03.ConsoleUI
 {
     internal class GarageSystemView
     {
-        public static void ShowScreen(string i_screenString)
+        public static void ShowScreen(string i_ScreenString)
         {
             PrintSystemHeader();
-            Console.WriteLine(string.Format(i_screenString));
+            Console.WriteLine(string.Format(i_ScreenString));
         }
 
         public static void PrintSystemHeader()
@@ -34,10 +34,10 @@ namespace Ex03.ConsoleUI
             Console.ReadKey();
         }
 
-        public static void PromptResultsDisplay(List<string> mathcedEntries)
+        public static void PromptResultsDisplay(List<string> i_MathcedEntries)
         {
             Console.WriteLine(string.Format(GarageSystemText.k_PromptResultDisplay));
-            foreach (string plate in mathcedEntries)
+            foreach (string plate in i_MathcedEntries)
             {
                 Console.WriteLine(plate);
             }

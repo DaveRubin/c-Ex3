@@ -10,13 +10,13 @@ namespace Ex03.ConsoleUI
         /// Print full details of a vehicle
         /// </summary>
         /// <param name="i_VehicleToPrint"></param>
-        public static void PrintFullDetails(VehicleRecord i_record)
+        public static void PrintFullDetails(VehicleRecord i_Record)
         {
-            string basicVehicleView = GetGeneralVehicleView(i_record.m_Vehicle);
-            string ownerView = VehicleOwnerView.GetVehicleOwnerView(i_record);
-            string tiresView = TiresView.GetTiresView(i_record.m_Vehicle.m_Tires);
-            string powerSourceView = GetPowerSourceView(i_record.m_Vehicle.r_PowerSource);
-            string vehicleSpecificView = GetSpecificVehicleView(i_record.m_Vehicle);
+            string basicVehicleView = GetGeneralVehicleView(i_Record.m_Vehicle);
+            string ownerView = VehicleOwnerView.GetVehicleOwnerView(i_Record);
+            string tiresView = TiresView.GetTiresView(i_Record.m_Vehicle.m_Tires);
+            string powerSourceView = GetPowerSourceView(i_Record.m_Vehicle.r_PowerSource);
+            string vehicleSpecificView = GetSpecificVehicleView(i_Record.m_Vehicle);
 
             Console.WriteLine(
                 string.Format(

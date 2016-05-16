@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Ex03.ConsoleUI
 {
@@ -8,14 +6,9 @@ namespace Ex03.ConsoleUI
 
     internal class VehicleOwnerView
     {
-
-
         public static string GetVehicleOwnerView(VehicleRecord i_Record)
         {
-            return string.Format(
-                GarageSystemText.k_OwnerVehicleViewTemplate,
-                i_Record.m_Owner.r_Name,
-                i_Record.m_Status);
+            return string.Format(GarageSystemText.k_OwnerVehicleViewTemplate, i_Record.m_Owner.r_Name, i_Record.m_Status);
         }
 
         public static void PrintVehicleRecordGetOwnerName()

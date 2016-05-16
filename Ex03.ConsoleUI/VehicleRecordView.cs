@@ -1,20 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Ex03.ConsoleUI
 {
     using Ex03.GarageLogic;
 
-    class VehicleRecordView
+    internal class VehicleRecordView
     {
         public static VehicleRecord GetNewVehicleRecord()
         {
-            //Get owner info
+            // Get owner info
             VehicleOwner owner = GetNewOwnerDialog();
-            //Get vehicle
+
+            // Get vehicle
             Vehicle vehicle = GetNewVehicle();
-            return new VehicleRecord(vehicle,owner);
+            return new VehicleRecord(vehicle, owner);
         }
 
         /// <summary>
@@ -41,7 +40,7 @@ namespace Ex03.ConsoleUI
             string modelName;
             string licenseNumber;
 
-            //choose type
+            // choose type
             GarageSystemView.PrintVehicleRecordSelectVehicleTypeMessage();
             VehicleFactory.eVehicleCatalogue selectedType =
                 (VehicleFactory.eVehicleCatalogue)InputUtils.GetEnumSelectionFromType<VehicleFactory.eVehicleCatalogue>();
@@ -52,11 +51,7 @@ namespace Ex03.ConsoleUI
             {
                 case VehicleFactory.eVehicleCatalogue.ElectricMotorCycle:
                 case VehicleFactory.eVehicleCatalogue.PetrolMotorCycle:
-                    result = CreateMotorcycleDialog(
-                        selectedType,
-                        tiresManufacturer,
-                        modelName,
-                        licenseNumber);
+                    result = CreateMotorcycleDialog(selectedType, tiresManufacturer, modelName, licenseNumber);
                     break;
 
                 case VehicleFactory.eVehicleCatalogue.ElectricCar:
@@ -65,20 +60,14 @@ namespace Ex03.ConsoleUI
                     break;
 
                 case VehicleFactory.eVehicleCatalogue.Truck:
-                    result = CreateTruckDialog(
-                        tiresManufacturer,
-                        modelName,
-                        licenseNumber);
+                    result = CreateTruckDialog(tiresManufacturer, modelName, licenseNumber);
                     break;
             }
 
             return result;
         }
 
-        private static Truck CreateTruckDialog(
-            string i_TiresManufacturer,
-            string i_ModelName,
-            string i_LicenseNumber)
+        private static Truck CreateTruckDialog(string i_TiresManufacturer, string i_ModelName, string i_LicenseNumber)
         {
             bool isCarryingHazMats;
             float maxWeight;
@@ -161,7 +150,10 @@ namespace Ex03.ConsoleUI
         /// <param name="i_TiresManufacturer"></param>
         /// <param name="i_ModelName"></param>
         /// <param name="i_LicenseNumber"></param>
-        private static void GetCommonVehicleInfoDialog(out string i_TiresManufacturer, out string i_ModelName, out string i_LicenseNumber)
+        private static void GetCommonVehicleInfoDialog(
+            out string i_TiresManufacturer,
+            out string i_ModelName,
+            out string i_LicenseNumber)
         {
             VehicleView.PrintGetTiresManufacturerNameMessage();
             i_TiresManufacturer = Console.ReadLine();

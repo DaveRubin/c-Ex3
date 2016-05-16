@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Ex03.GarageLogic
 {
     public class ElectricPowerSource : PowerSource
     {
-
         public readonly float r_MaxHours;
         private float m_HoursLeft;
 
@@ -26,7 +23,7 @@ namespace Ex03.GarageLogic
         {
             if (i_maxHours <= 0)
             {
-                throw new ArgumentException(ExceptionMessages.k_ElectricPowerSourceNonPositiveMaxHours,"i_maxHours");
+                throw new ArgumentException(ExceptionMessages.k_ElectricPowerSourceNonPositiveMaxHours, "i_maxHours");
             }
 
             r_MaxHours = i_maxHours;
@@ -40,7 +37,7 @@ namespace Ex03.GarageLogic
         /// <param name="i_hoursToCharge"></param>
         public void Charge(float i_hoursToCharge)
         {
-            if (m_HoursLeft+ i_hoursToCharge > r_MaxHours)
+            if (m_HoursLeft + i_hoursToCharge > r_MaxHours)
             {
                 throw new ValueOutOfRangeException(
                     ExceptionMessages.k_ElectricPowerSourceExceedingMaximumHours,
@@ -61,7 +58,5 @@ namespace Ex03.GarageLogic
                 return m_HoursLeft / r_MaxHours;
             }
         }
-
-
     }
 }

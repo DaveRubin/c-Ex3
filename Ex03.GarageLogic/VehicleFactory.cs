@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Ex03.GarageLogic
 {
@@ -14,6 +12,7 @@ namespace Ex03.GarageLogic
             PetrolCar = 3,
             Truck = 4
         }
+
         private const int k_MotorcycleAirPressure = 31;
         private const int k_CarAirPressure = 30;
         private const int k_TruckAirPressure = 28;
@@ -78,7 +77,13 @@ namespace Ex03.GarageLogic
             ElectricMotorCycle result;
 
             List<Tire> tires = GetTires(k_MotorcycleTires, i_tiresMenufecturer, k_MotorcycleAirPressure);
-            result = new ElectricMotorCycle(k_ElectricMotorcycleMaxHours, i_modelName, i_licenseNumber, tires, i_licencType, i_engineVolume);
+            result = new ElectricMotorCycle(
+                k_ElectricMotorcycleMaxHours,
+                i_modelName,
+                i_licenseNumber,
+                tires,
+                i_licencType,
+                i_engineVolume);
             return result;
         }
 
@@ -180,6 +185,7 @@ namespace Ex03.GarageLogic
                 Tire tire = new Tire(i_manufacturerName, i_airPressure);
                 tires.Add(tire);
             }
+
             return tires;
         }
     }

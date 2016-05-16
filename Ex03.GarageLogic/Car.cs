@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Ex03.GarageLogic
 {
     public class Car : Vehicle
     {
+        public static readonly List<int> sr_ValidVehicleDoorsList = new List<int>() { 2, 3, 4, 5 };
+
         public readonly int r_DoorsCount;
         public readonly eCarColor r_Color;
-
-        public static readonly List<int> s_ValidVehicleDoorsList = new List<int>(){2,3,4,5};
 
         /// <summary>
         /// Create a new car
@@ -31,7 +30,7 @@ namespace Ex03.GarageLogic
         {
             if (!ValidateDoorsCount(i_doorsCount))
             {
-                throw new ArgumentException(ExceptionMessages.k_CarInvalidDoorsCount,"i_doorsCount");
+                throw new ArgumentException(ExceptionMessages.k_CarInvalidDoorsCount, "i_doorsCount");
             }
 
             r_Color = i_color;
@@ -40,7 +39,7 @@ namespace Ex03.GarageLogic
 
         private bool ValidateDoorsCount(int i_doorsCount)
         {
-            return s_ValidVehicleDoorsList.IndexOf(i_doorsCount) != -1;
+            return sr_ValidVehicleDoorsList.IndexOf(i_doorsCount) != -1;
         }
 
         public enum eCarColor

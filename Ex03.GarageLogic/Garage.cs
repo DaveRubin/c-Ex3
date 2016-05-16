@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Ex03.GarageLogic
 {
@@ -34,10 +33,10 @@ namespace Ex03.GarageLogic
             else
             {
                 VehicleRecord record = new VehicleRecord(i_vehicle, i_owner);
-                m_licenseToRecordDictionary.Add(i_vehicle.r_LicenseNumber,record);
+                m_licenseToRecordDictionary.Add(i_vehicle.r_LicenseNumber, record);
                 res = true;
             }
-            
+
             return res;
         }
 
@@ -45,6 +44,7 @@ namespace Ex03.GarageLogic
         {
             return m_licenseToRecordDictionary[i_plateNumberRequested];
         }
+
         /// <summary>
         /// Get all license numbers for vehicles that match certain status
         /// </summary>
@@ -117,7 +117,10 @@ namespace Ex03.GarageLogic
         /// <param name="i_FuelType"></param>
         /// <param name="i_AmountToFill"></param>
         /// <returns></returns>
-        public static bool FillGasTank(string i_LicensePlateNumber, PetrolPowerSource.eFuelType i_FuelType, float i_AmountToFill)
+        public static bool FillGasTank(
+            string i_LicensePlateNumber,
+            PetrolPowerSource.eFuelType i_FuelType,
+            float i_AmountToFill)
         {
             bool isSuccess = false;
 
@@ -125,13 +128,13 @@ namespace Ex03.GarageLogic
             {
                 Vehicle vehicle = m_licenseToRecordDictionary[i_LicensePlateNumber].m_Vehicle;
 
-                //check if vehicle is petrol source
+                // check if vehicle is petrol source
                 if (vehicle.r_PowerSource.GetType() != typeof(PetrolPowerSource))
                 {
                     throw new ArgumentException(ExceptionMessages.k_GarageTryingToFillGasTankForElectric);
                 }
 
-                ((PetrolPowerSource)vehicle.r_PowerSource).Fuel(i_FuelType,i_AmountToFill);
+                ((PetrolPowerSource)vehicle.r_PowerSource).Fuel(i_FuelType, i_AmountToFill);
                 isSuccess = true;
             }
 
@@ -152,11 +155,12 @@ namespace Ex03.GarageLogic
             {
                 Vehicle vehicle = m_licenseToRecordDictionary[i_LicensePlateNumber].m_Vehicle;
 
-                //check if vehicle is petrol source
+                // check if vehicle is petrol source
                 if (vehicle.r_PowerSource.GetType() != typeof(ElectricPowerSource))
                 {
                     throw new ArgumentException(ExceptionMessages.k_GarageTryingToChargePetrolVehicle);
                 }
+
                 float hoursToCharge = (float)i_MinutesToCharge / 60;
                 ((ElectricPowerSource)vehicle.r_PowerSource).Charge(hoursToCharge);
 
@@ -165,7 +169,7 @@ namespace Ex03.GarageLogic
 
             return isSuccess;
         }
-        
+
         /// <summary>
         /// Get the Vehicle record
         /// </summary>

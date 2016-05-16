@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Ex03.GarageLogic
 {
@@ -29,7 +28,7 @@ namespace Ex03.GarageLogic
         {
             if (i_engineVolume <= 0)
             {
-                throw new ArgumentException(ExceptionMessages.k_MotorcycleNonPositiveEngineVolumeValue,"i_engineVolume");
+                throw new ArgumentException(ExceptionMessages.k_MotorcycleNonPositiveEngineVolumeValue, "i_engineVolume");
             }
 
             r_LicenseType = i_licenseType;
@@ -38,10 +37,10 @@ namespace Ex03.GarageLogic
 
         public enum eLicenseType
         {
-            A, 
-            A1, 
-            AB, 
-            B1 
+            A,
+            A1,
+            AB,
+            B1
         }
     }
 }

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ex03.GarageLogic
+﻿namespace Ex03.GarageLogic
 {
-    //base class for other engine types
+    // base class for other engine types
     public class PowerSource
     {
         public virtual float GetPercentageLeft

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Ex03.GarageLogic
 {
@@ -37,11 +35,11 @@ namespace Ex03.GarageLogic
         /// <param name="i_amount">should'nt excees r_maxFuelAllowed</param>
         public void Fuel(eFuelType i_fuelType, float i_amount)
         {
-
             if (i_fuelType != r_FeulType)
             {
                 throw new ArgumentException(ExceptionMessages.k_FuelTypeMismatch, "i_fuelType");
             }
+
             if (i_amount + m_CurrentFuelAmount > r_MaxFuelAllowed)
             {
                 throw new ValueOutOfRangeException(
@@ -64,7 +62,7 @@ namespace Ex03.GarageLogic
             }
         }
 
-        public enum eFuelType 
+        public enum eFuelType
         {
             Soler,
             Octan96,

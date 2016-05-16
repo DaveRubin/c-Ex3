@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Ex03.GarageLogic
 {
@@ -38,12 +37,11 @@ namespace Ex03.GarageLogic
         {
             if (i_maxWeightAllowed <= 0)
             {
-                throw new ArgumentException(ExceptionMessages.k_TruckNonPositiveWeight,"i_maxWeightAllowed");
+                throw new ArgumentException(ExceptionMessages.k_TruckNonPositiveWeight, "i_maxWeightAllowed");
             }
 
             r_IsCarryingHazardousMaterials = i_isCarryingHazardousMaterials;
             r_MaxWeightAllowed = i_maxWeightAllowed;
         }
-
     }
 }

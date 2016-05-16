@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Ex03.GarageLogic
 {
@@ -10,7 +8,7 @@ namespace Ex03.GarageLogic
         public readonly float r_MaxAirPressure;
         private float m_CurrentAirPressure;
 
-        public float CurrentAirPressure 
+        public float CurrentAirPressure
         {
             get
             {
@@ -18,11 +16,11 @@ namespace Ex03.GarageLogic
             }
         }
 
-        public Tire(string i_manufacturerName,float i_maxAirPressure)
+        public Tire(string i_manufacturerName, float i_maxAirPressure)
         {
             if (i_maxAirPressure <= 0)
             {
-                throw new ArgumentException(ExceptionMessages.k_TireNonPositiveMaxAirPressure,"i_maxAirPressure");
+                throw new ArgumentException(ExceptionMessages.k_TireNonPositiveMaxAirPressure, "i_maxAirPressure");
             }
 
             r_ManufacturerName = i_manufacturerName;

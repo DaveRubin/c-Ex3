@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Ex03.GarageLogic
 {
@@ -21,9 +19,14 @@ namespace Ex03.GarageLogic
             List<Tire> i_wheels,
             eLicenseType i_licenseType,
             int i_engineVolume)
-            : base(new ElectricPowerSource(i_maxHours), i_modelName, i_licenseNumber, i_wheels,i_licenseType,i_engineVolume)
+            : base(
+                new ElectricPowerSource(i_maxHours),
+                i_modelName,
+                i_licenseNumber,
+                i_wheels,
+                i_licenseType,
+                i_engineVolume)
         {
-            
         }
     }
 }

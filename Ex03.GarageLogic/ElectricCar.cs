@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Ex03.GarageLogic
 {
@@ -23,8 +21,6 @@ namespace Ex03.GarageLogic
             int i_doorsCount)
             : base(new ElectricPowerSource(i_maxHours), i_modelName, i_licenseNumber, i_wheels, i_color, i_doorsCount)
         {
-
         }
-
     }
 }

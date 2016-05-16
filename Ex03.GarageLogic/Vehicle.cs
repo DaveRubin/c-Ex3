@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Ex03.GarageLogic
 {
-    public  class Vehicle
+    public class Vehicle
     {
         public readonly PowerSource r_PowerSource;
         public readonly string r_ModelName;

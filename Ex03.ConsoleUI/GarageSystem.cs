@@ -55,7 +55,17 @@ namespace Ex03.ConsoleUI
         private void NewVehicleScreen()
         {
             GarageSystemView.ShowScreen(GarageSystemText.k_InsertNewVehicleScreen);
-            VehicleRecord newRecord = VehicleRecordView.GetNewVehicleRecord();
+            VehicleRecord newRecord = null;
+            try
+            {
+                newRecord = VehicleRecordView.GetNewVehicleRecord();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                GarageSystemView.PauseForKeyStroke();
+                NewVehicleScreen();
+            }
             string plateNumber = newRecord.m_Vehicle.r_LicenseNumber;
             if (Garage.IsVehicleExist(plateNumber))
             {

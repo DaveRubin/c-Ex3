@@ -6,7 +6,7 @@ namespace Ex03.ConsoleUI
 {
     using Ex03.GarageLogic;
 
-    class InputUtils
+    internal class InputUtils
     {
         public const string k_GetBoundedIntFromConsoleTemplate = "Invalid input, please enter a number between {0} and {1} :";
         public const string k_GetIntFromConsoleInvalidMessage = "Invalid input, please enter a number";
@@ -157,6 +157,7 @@ namespace Ex03.ConsoleUI
             {
                 Console.WriteLine(string.Format("{1:D} - {0} ", valueName, Enum.Parse(i_EnumType, valueName)));
             }
+
             int selection = InputUtils.GetBoundedIntFromConsole(0, valueNames.Length - 1);
             
             return selection;
@@ -181,7 +182,6 @@ namespace Ex03.ConsoleUI
         /// <returns></returns>
         public static float GetFloatFromConsole()
         {
-
             string userInput = Console.ReadLine();
             float result;
 

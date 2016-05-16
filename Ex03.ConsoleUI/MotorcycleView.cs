@@ -8,7 +8,6 @@ namespace Ex03.ConsoleUI
 
     internal class MotorcycleView
     {
-
         public static string GetMotorCycleView(Motorcycle i_Motorcycle)
         {
             return string.Format(

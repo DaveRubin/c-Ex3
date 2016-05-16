@@ -8,7 +8,6 @@ namespace Ex03.ConsoleUI
 
     internal class PetrolPowerSourceView
     {
-
         public static string GetPetrolPowerSourceView(PetrolPowerSource i_PowerSource)
         {
             return string.Format(

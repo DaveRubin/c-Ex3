@@ -5,7 +5,6 @@ using Ex03.GarageLogic;
 
 namespace Ex03.ConsoleUI
 {
-
     internal class GarageSystemView
     {
         public static void ShowScreen(string i_screenString)

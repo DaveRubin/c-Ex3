@@ -8,8 +8,6 @@ namespace Ex03.ConsoleUI
 
     internal class CarView
     {
-
-
         public static string GetCarView(Car i_Car)
         {
             return string.Format(VehicleViewTextTemplates.k_CarViewTemplate, i_Car.r_Color, i_Car.r_DoorsCount);

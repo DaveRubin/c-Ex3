@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Ex03.ConsoleUI
 {
-    class GarageKeys
+    internal class GarageKeys
     {
+        public const char k_EscapeKeyChar = 'q';
         public static char k_True = 't';
         public static char k_False = 'f';
-        public const char k_EscapeKeyChar = 'q';
     }
 }

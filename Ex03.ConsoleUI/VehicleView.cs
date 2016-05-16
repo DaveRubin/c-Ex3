@@ -15,7 +15,7 @@ namespace Ex03.ConsoleUI
         /// <param name="i_VehicleToPrint"></param>
         public static void PrintFullDetails(VehicleRecord i_record)
         {
-            string basicVehicleView = GeneralVehicleView.GetGeneralVehicleView(i_record.m_Vehicle);
+            string basicVehicleView = GetGeneralVehicleView(i_record.m_Vehicle);
             string ownerView = VehicleOwnerView.GetVehicleOwnerView(i_record);
             string tiresView = TiresView.GetTiresView(i_record.m_Vehicle.m_Tires);
             string powerSourceView = GetPowerSourceView(i_record.m_Vehicle.r_PowerSource);
@@ -23,13 +23,27 @@ namespace Ex03.ConsoleUI
 
             Console.WriteLine(
                 string.Format(
-                    VehicleViewTextTemplates.k_VehicleViewTemplate,
+                    GarageSystemText.k_VehicleViewTemplate,
                     basicVehicleView,
                     ownerView,
                     tiresView,
                     powerSourceView,
                     vehicleSpecificView));
 
+        }
+
+        /// <summary>
+        /// Print :
+        /// license name
+        /// model name
+        /// </summary>
+        /// <param name="i_Vehicle"></param>
+        private static string GetGeneralVehicleView(Vehicle i_Vehicle)
+        {
+            return string.Format(
+                GarageSystemText.k_FullDetailsTemplate,
+                i_Vehicle.r_LicenseNumber,
+                i_Vehicle.r_ModelName);
         }
 
         /// <summary>

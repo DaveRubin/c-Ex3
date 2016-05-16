@@ -13,13 +13,13 @@ namespace Ex03.GarageLogic
         }
 
         public ElectricCar(
-            float i_maxHours,
-            string i_modelName,
-            string i_licenseNumber,
-            List<Tire> i_wheels,
-            eCarColor i_color,
-            int i_doorsCount)
-            : base(new ElectricPowerSource(i_maxHours), i_modelName, i_licenseNumber, i_wheels, i_color, i_doorsCount)
+            float i_MaxHours,
+            string i_ModelName,
+            string i_LicenseNumber,
+            List<Tire> i_Tires,
+            eCarColor i_Color,
+            int i_DoorsCount)
+            : base(new ElectricPowerSource(i_MaxHours), i_ModelName, i_LicenseNumber, i_Tires, i_Color, i_DoorsCount)
         {
         }
     }

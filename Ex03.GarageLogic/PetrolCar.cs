@@ -13,20 +13,20 @@ namespace Ex03.GarageLogic
         }
 
         public PetrolCar(
-            PetrolPowerSource.eFuelType i_fuelType,
-            float i_maxFuelAllowed,
-            string i_modelName,
-            string i_licenseNumber,
-            List<Tire> i_wheels,
-            eCarColor i_color,
-            int i_doorsCount)
+            PetrolPowerSource.eFuelType i_FuelType,
+            float i_MaxFuelAllowed,
+            string i_ModelName,
+            string i_LicenseNumber,
+            List<Tire> i_Tires,
+            eCarColor i_Color,
+            int i_DoorsCount)
             : base(
-                new PetrolPowerSource(i_fuelType, i_maxFuelAllowed),
-                i_modelName,
-                i_licenseNumber,
-                i_wheels,
-                i_color,
-                i_doorsCount)
+                new PetrolPowerSource(i_FuelType, i_MaxFuelAllowed),
+                i_ModelName,
+                i_LicenseNumber,
+                i_Tires,
+                i_Color,
+                i_DoorsCount)
         {
         }
     }

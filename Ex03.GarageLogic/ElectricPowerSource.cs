@@ -18,26 +18,26 @@ namespace Ex03.GarageLogic
         /// <summary>
         /// Constructor for electric power source
         /// </summary>
-        /// <param name="i_maxHours"></param>
-        public ElectricPowerSource(float i_maxHours)
+        /// <param name="i_MaxHours"></param>
+        public ElectricPowerSource(float i_MaxHours)
         {
-            if (i_maxHours <= 0)
+            if (i_MaxHours <= 0)
             {
-                throw new ArgumentException(ExceptionMessages.k_ElectricPowerSourceNonPositiveMaxHours, "i_maxHours");
+                throw new ArgumentException(ExceptionMessages.k_ElectricPowerSourceNonPositiveMaxHours, "i_MaxHours");
             }
 
-            r_MaxHours = i_maxHours;
-            m_HoursLeft = i_maxHours;
+            r_MaxHours = i_MaxHours;
+            m_HoursLeft = i_MaxHours;
         }
 
         /// <summary>
         /// Charge electric power source
         /// (shoulsn't exceed max hours)
         /// </summary>
-        /// <param name="i_hoursToCharge"></param>
-        public void Charge(float i_hoursToCharge)
+        /// <param name="i_HoursToCharge"></param>
+        public void Charge(float i_HoursToCharge)
         {
-            if (m_HoursLeft + i_hoursToCharge > r_MaxHours)
+            if (m_HoursLeft + i_HoursToCharge > r_MaxHours)
             {
                 throw new ValueOutOfRangeException(
                     ExceptionMessages.k_ElectricPowerSourceExceedingMaximumHours,
@@ -45,7 +45,7 @@ namespace Ex03.GarageLogic
                     (int)r_MaxHours);
             }
 
-            m_HoursLeft += i_hoursToCharge;
+            m_HoursLeft += i_HoursToCharge;
         }
 
         /// <summary>

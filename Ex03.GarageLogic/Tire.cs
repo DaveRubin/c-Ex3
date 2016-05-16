@@ -16,21 +16,21 @@ namespace Ex03.GarageLogic
             }
         }
 
-        public Tire(string i_manufacturerName, float i_maxAirPressure)
+        public Tire(string i_ManufacturerName, float i_MaxAirPressure)
         {
-            if (i_maxAirPressure <= 0)
+            if (i_MaxAirPressure <= 0)
             {
-                throw new ArgumentException(ExceptionMessages.k_TireNonPositiveMaxAirPressure, "i_maxAirPressure");
+                throw new ArgumentException(ExceptionMessages.k_TireNonPositiveMaxAirPressure, "i_MaxAirPressure");
             }
 
-            r_ManufacturerName = i_manufacturerName;
-            r_MaxAirPressure = i_maxAirPressure;
-            m_CurrentAirPressure = i_maxAirPressure;
+            r_ManufacturerName = i_ManufacturerName;
+            r_MaxAirPressure = i_MaxAirPressure;
+            m_CurrentAirPressure = i_MaxAirPressure;
         }
 
-        public void Inflate(float i_airAddition)
+        public void Inflate(float i_AirAddition)
         {
-            if (m_CurrentAirPressure + i_airAddition > r_MaxAirPressure)
+            if (m_CurrentAirPressure + i_AirAddition > r_MaxAirPressure)
             {
                 throw new ValueOutOfRangeException(
                     ExceptionMessages.k_TireExceededMaxAirPressure,
@@ -38,7 +38,7 @@ namespace Ex03.GarageLogic
                     (int)r_MaxAirPressure);
             }
 
-            m_CurrentAirPressure += i_airAddition;
+            m_CurrentAirPressure += i_AirAddition;
         }
 
         public void InflateToMax()

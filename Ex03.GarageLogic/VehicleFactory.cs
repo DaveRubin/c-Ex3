@@ -31,139 +31,139 @@ namespace Ex03.GarageLogic
         /// <summary>
         /// Create a new petrol motorcycle
         /// </summary>
-        /// <param name="i_tiresMenufecturer"></param>
-        /// <param name="i_modelName"></param>
-        /// <param name="i_licenseNumber"></param>
-        /// <param name="i_licencType"></param>
-        /// <param name="i_engineVolume"></param>
+        /// <param name="i_TiresMenufecturer"></param>
+        /// <param name="i_ModelName"></param>
+        /// <param name="i_LicenseNumber"></param>
+        /// <param name="i_LicencType"></param>
+        /// <param name="i_EngineVolume"></param>
         /// <returns></returns>
         public static PetrolMotorCycle CreatePetrolMotorCycle(
-            string i_tiresMenufecturer,
-            string i_modelName,
-            string i_licenseNumber,
-            Motorcycle.eLicenseType i_licencType,
-            int i_engineVolume)
+            string i_TiresMenufecturer,
+            string i_ModelName,
+            string i_LicenseNumber,
+            Motorcycle.eLicenseType i_LicencType,
+            int i_EngineVolume)
         {
             PetrolMotorCycle result;
 
-            List<Tire> tires = GetTires(k_MotorcycleTires, i_tiresMenufecturer, k_MotorcycleAirPressure);
+            List<Tire> tires = GetTires(k_MotorcycleTires, i_TiresMenufecturer, k_MotorcycleAirPressure);
             result = new PetrolMotorCycle(
                 k_PetrolMotorcycleFuelType,
                 k_PetrolMotorcycleMaxAmount,
-                i_modelName,
-                i_licenseNumber,
+                i_ModelName,
+                i_LicenseNumber,
                 tires,
-                i_licencType,
-                i_engineVolume);
+                i_LicencType,
+                i_EngineVolume);
             return result;
         }
 
         /// <summary>
         /// Create a new electric motorcycle
         /// </summary>
-        /// <param name="i_tiresMenufecturer"></param>
-        /// <param name="i_modelName"></param>
-        /// <param name="i_licenseNumber"></param>
-        /// <param name="i_licencType"></param>
-        /// <param name="i_engineVolume"></param>
+        /// <param name="i_TiresMenufecturer"></param>
+        /// <param name="i_ModelName"></param>
+        /// <param name="i_LicenseNumber"></param>
+        /// <param name="i_LicencType"></param>
+        /// <param name="i_EngineVolume"></param>
         /// <returns></returns>
         public static ElectricMotorCycle CreateElectricMotorcycle(
-            string i_tiresMenufecturer,
-            string i_modelName,
-            string i_licenseNumber,
-            Motorcycle.eLicenseType i_licencType,
-            int i_engineVolume)
+            string i_TiresMenufecturer,
+            string i_ModelName,
+            string i_LicenseNumber,
+            Motorcycle.eLicenseType i_LicencType,
+            int i_EngineVolume)
         {
             ElectricMotorCycle result;
 
-            List<Tire> tires = GetTires(k_MotorcycleTires, i_tiresMenufecturer, k_MotorcycleAirPressure);
+            List<Tire> tires = GetTires(k_MotorcycleTires, i_TiresMenufecturer, k_MotorcycleAirPressure);
             result = new ElectricMotorCycle(
                 k_ElectricMotorcycleMaxHours,
-                i_modelName,
-                i_licenseNumber,
+                i_ModelName,
+                i_LicenseNumber,
                 tires,
-                i_licencType,
-                i_engineVolume);
+                i_LicencType,
+                i_EngineVolume);
             return result;
         }
 
         /// <summary>
         /// Create a new electric car
         /// </summary>
-        /// <param name="i_tiresMenufecturer"></param>
-        /// <param name="i_modelName"></param>
-        /// <param name="i_licenceNumber"></param>
+        /// <param name="i_TiresMenufecturer"></param>
+        /// <param name="i_ModelName"></param>
+        /// <param name="i_LicenceNumber"></param>
         /// <param name="i_tiers"></param>
-        /// <param name="i_color"></param>
-        /// <param name="i_doorsCount"></param>
+        /// <param name="i_Color"></param>
+        /// <param name="i_DoorsCount"></param>
         /// <returns></returns>
         public static ElectricCar CreateElectricCar(
-            string i_tiresMenufecturer,
-            string i_modelName,
-            string i_licenceNumber,
-            Car.eCarColor i_color,
-            int i_doorsCount)
+            string i_TiresMenufecturer,
+            string i_ModelName,
+            string i_LicenceNumber,
+            Car.eCarColor i_Color,
+            int i_DoorsCount)
         {
             ElectricCar result;
 
-            List<Tire> tires = GetTires(k_CarTires, i_tiresMenufecturer, k_CarAirPressure);
-            result = new ElectricCar(k_ElectricCarMaxHours, i_modelName, i_licenceNumber, tires, i_color, i_doorsCount);
+            List<Tire> tires = GetTires(k_CarTires, i_TiresMenufecturer, k_CarAirPressure);
+            result = new ElectricCar(k_ElectricCarMaxHours, i_ModelName, i_LicenceNumber, tires, i_Color, i_DoorsCount);
             return result;
         }
 
         /// <summary>
         /// Create new patrol car
         /// </summary>
-        /// <param name="i_tiresMenufecturer"></param>
-        /// <param name="i_modelName"></param>
-        /// <param name="i_licenceNumber"></param>
-        /// <param name="i_color"></param>
-        /// <param name="i_doorsCount"></param>
+        /// <param name="i_TiresMenufecturer"></param>
+        /// <param name="i_ModelName"></param>
+        /// <param name="i_LicenceNumber"></param>
+        /// <param name="i_Color"></param>
+        /// <param name="i_DoorsCount"></param>
         /// <returns></returns>
         public static PetrolCar CreatePetrolCar(
-            string i_tiresMenufecturer,
-            string i_modelName,
-            string i_licenceNumber,
-            Car.eCarColor i_color,
-            int i_doorsCount)
+            string i_TiresMenufecturer,
+            string i_ModelName,
+            string i_LicenceNumber,
+            Car.eCarColor i_Color,
+            int i_DoorsCount)
         {
             PetrolCar result;
 
-            List<Tire> tires = GetTires(k_CarTires, i_tiresMenufecturer, k_CarAirPressure);
+            List<Tire> tires = GetTires(k_CarTires, i_TiresMenufecturer, k_CarAirPressure);
             result = new PetrolCar(
                 k_PetrolCarFuelType,
                 k_PetrolCarMaxAmount,
-                i_modelName,
-                i_licenceNumber,
+                i_ModelName,
+                i_LicenceNumber,
                 tires,
-                i_color,
-                i_doorsCount);
+                i_Color,
+                i_DoorsCount);
             return result;
         }
 
         /// <summary>
         /// Create new truck
         /// </summary>
-        /// <param name="i_tiresMenufecturer"></param>
-        /// <param name="i_modelName"></param>
-        /// <param name="i_licenceNumber"></param>
+        /// <param name="i_TiresMenufecturer"></param>
+        /// <param name="i_ModelName"></param>
+        /// <param name="i_LicenceNumber"></param>
         /// <param name="i_IsCarryingHazardousMaterials"></param>
         /// <param name="i_MaxWeightAllowed"></param>
         /// <returns></returns>
         public static Truck CreateTruck(
-            string i_tiresMenufecturer,
-            string i_modelName,
-            string i_licenceNumber,
+            string i_TiresMenufecturer,
+            string i_ModelName,
+            string i_LicenceNumber,
             bool i_IsCarryingHazardousMaterials,
             float i_MaxWeightAllowed)
         {
             Truck result;
-            List<Tire> tires = GetTires(k_TruckTires, i_tiresMenufecturer, k_TruckAirPressure);
+            List<Tire> tires = GetTires(k_TruckTires, i_TiresMenufecturer, k_TruckAirPressure);
             result = new Truck(
                 k_PetrolTruckFuelType,
                 k_TruckMaxAmount,
-                i_modelName,
-                i_licenceNumber,
+                i_ModelName,
+                i_LicenceNumber,
                 tires,
                 i_IsCarryingHazardousMaterials,
                 i_MaxWeightAllowed);
@@ -173,16 +173,16 @@ namespace Ex03.GarageLogic
         /// <summary>
         /// Create a set of tires
         /// </summary>
-        /// <param name="i_numOfTires"></param>
-        /// <param name="i_manufacturerName"></param>
-        /// <param name="i_airPressure"></param>
+        /// <param name="i_NumOfTires"></param>
+        /// <param name="i_ManufacturerName"></param>
+        /// <param name="i_AirPressure"></param>
         /// <returns></returns>
-        private static List<Tire> GetTires(int i_numOfTires, string i_manufacturerName, float i_airPressure)
+        private static List<Tire> GetTires(int i_NumOfTires, string i_ManufacturerName, float i_AirPressure)
         {
             List<Tire> tires = new List<Tire>();
-            for (int i = 0; i < i_numOfTires; i++)
+            for (int i = 0; i < i_NumOfTires; i++)
             {
-                Tire tire = new Tire(i_manufacturerName, i_airPressure);
+                Tire tire = new Tire(i_ManufacturerName, i_AirPressure);
                 tires.Add(tire);
             }
 

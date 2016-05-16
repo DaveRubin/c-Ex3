@@ -13,33 +13,33 @@ namespace Ex03.GarageLogic
         /// <summary>
         /// Create a new car
         /// </summary>
-        /// <param name="i_powerSource"></param>
-        /// <param name="i_modelName"></param>
-        /// <param name="i_licenseNumber"></param>
-        /// <param name="i_wheels"></param>
-        /// <param name="i_color"></param>
-        /// <param name="i_doorsCount"></param>
+        /// <param name="i_PowerSource"></param>
+        /// <param name="i_ModelName"></param>
+        /// <param name="i_LicenseNumber"></param>
+        /// <param name="i_Tires"></param>
+        /// <param name="i_Color"></param>
+        /// <param name="i_DoorsCount"></param>
         public Car(
-            PowerSource i_powerSource,
-            string i_modelName,
-            string i_licenseNumber,
-            List<Tire> i_wheels,
-            eCarColor i_color,
-            int i_doorsCount)
-            : base(i_powerSource, i_modelName, i_licenseNumber, i_wheels)
+            PowerSource i_PowerSource,
+            string i_ModelName,
+            string i_LicenseNumber,
+            List<Tire> i_Tires,
+            eCarColor i_Color,
+            int i_DoorsCount)
+            : base(i_PowerSource, i_ModelName, i_LicenseNumber, i_Tires)
         {
-            if (!ValidateDoorsCount(i_doorsCount))
+            if (!ValidateDoorsCount(i_DoorsCount))
             {
-                throw new ArgumentException(ExceptionMessages.k_CarInvalidDoorsCount, "i_doorsCount");
+                throw new ArgumentException(ExceptionMessages.k_CarInvalidDoorsCount, "i_DoorsCount");
             }
 
-            r_Color = i_color;
-            r_DoorsCount = i_doorsCount;
+            r_Color = i_Color;
+            r_DoorsCount = i_DoorsCount;
         }
 
-        private bool ValidateDoorsCount(int i_doorsCount)
+        private bool ValidateDoorsCount(int i_DoorsCount)
         {
-            return sr_ValidVehicleDoorsList.IndexOf(i_doorsCount) != -1;
+            return sr_ValidVehicleDoorsList.IndexOf(i_DoorsCount) != -1;
         }
 
         public enum eCarColor

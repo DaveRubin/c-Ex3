@@ -11,28 +11,28 @@ namespace Ex03.GarageLogic
         /// <summary>
         /// Create a new motorcycle
         /// </summary>
-        /// <param name="i_powerSource"></param>
-        /// <param name="i_modelName"></param>
-        /// <param name="i_licenseNumber"></param>
-        /// <param name="i_wheels"></param>
-        /// <param name="i_licenseType"></param>
-        /// <param name="i_engineVolume"></param>
+        /// <param name="i_PowerSource"></param>
+        /// <param name="i_ModelName"></param>
+        /// <param name="i_LicenseNumber"></param>
+        /// <param name="i_Tires"></param>
+        /// <param name="i_LicenseType"></param>
+        /// <param name="i_EngineVolume"></param>
         public Motorcycle(
-            PowerSource i_powerSource,
-            string i_modelName,
-            string i_licenseNumber,
-            List<Tire> i_wheels,
-            eLicenseType i_licenseType,
-            int i_engineVolume)
-            : base(i_powerSource, i_modelName, i_licenseNumber, i_wheels)
+            PowerSource i_PowerSource,
+            string i_ModelName,
+            string i_LicenseNumber,
+            List<Tire> i_Tires,
+            eLicenseType i_LicenseType,
+            int i_EngineVolume)
+            : base(i_PowerSource, i_ModelName, i_LicenseNumber, i_Tires)
         {
-            if (i_engineVolume <= 0)
+            if (i_EngineVolume <= 0)
             {
-                throw new ArgumentException(ExceptionMessages.k_MotorcycleNonPositiveEngineVolumeValue, "i_engineVolume");
+                throw new ArgumentException(ExceptionMessages.k_MotorcycleNonPositiveEngineVolumeValue, "i_EngineVolume");
             }
 
-            r_LicenseType = i_licenseType;
-            r_EngineVolume = i_engineVolume;
+            r_LicenseType = i_LicenseType;
+            r_EngineVolume = i_EngineVolume;
         }
 
         public enum eLicenseType

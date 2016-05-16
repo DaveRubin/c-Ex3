@@ -19,29 +19,29 @@ namespace Ex03.GarageLogic
         /// <summary>
         /// Create a new truck
         /// </summary>
-        /// <param name="i_powerSource"></param>
-        /// <param name="i_modelName"></param>
-        /// <param name="i_licenseNumber"></param>
-        /// <param name="i_wheels"></param>
-        /// <param name="i_isCarryingHazardousMaterials"></param>
-        /// <param name="i_maxWeightAllowed"></param>
+        /// <param name="i_PowerSource"></param>
+        /// <param name="i_ModelName"></param>
+        /// <param name="i_LicenseNumber"></param>
+        /// <param name="i_Tires"></param>
+        /// <param name="i_IsCarryingHazardousMaterials"></param>
+        /// <param name="i_MaxWeightAllowed"></param>
         public Truck(
-            PetrolPowerSource.eFuelType i_fuelType,
-            float i_maxFuelAllowed,
-            string i_modelName,
-            string i_licenseNumber,
-            List<Tire> i_wheels,
-            bool i_isCarryingHazardousMaterials,
-            float i_maxWeightAllowed)
-            : base(new PetrolPowerSource(i_fuelType, i_maxFuelAllowed), i_modelName, i_licenseNumber, i_wheels)
+            PetrolPowerSource.eFuelType i_FuelType,
+            float i_MaxFuelAllowed,
+            string i_ModelName,
+            string i_LicenseNumber,
+            List<Tire> i_Tires,
+            bool i_IsCarryingHazardousMaterials,
+            float i_MaxWeightAllowed)
+            : base(new PetrolPowerSource(i_FuelType, i_MaxFuelAllowed), i_ModelName, i_LicenseNumber, i_Tires)
         {
-            if (i_maxWeightAllowed <= 0)
+            if (i_MaxWeightAllowed <= 0)
             {
-                throw new ArgumentException(ExceptionMessages.k_TruckNonPositiveWeight, "i_maxWeightAllowed");
+                throw new ArgumentException(ExceptionMessages.k_TruckNonPositiveWeight, "i_MaxWeightAllowed");
             }
 
-            r_IsCarryingHazardousMaterials = i_isCarryingHazardousMaterials;
-            r_MaxWeightAllowed = i_maxWeightAllowed;
+            r_IsCarryingHazardousMaterials = i_IsCarryingHazardousMaterials;
+            r_MaxWeightAllowed = i_MaxWeightAllowed;
         }
     }
 }

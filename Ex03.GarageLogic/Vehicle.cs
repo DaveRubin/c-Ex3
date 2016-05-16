@@ -18,11 +18,11 @@ namespace Ex03.GarageLogic
             }
         }
 
-        public Vehicle(PowerSource i_powerSource, string i_modelName, string i_licenseNumber, List<Tire> i_Tires)
+        public Vehicle(PowerSource i_PowerSource, string i_ModelName, string i_LicenseNumber, List<Tire> i_Tires)
         {
-            r_PowerSource = i_powerSource;
-            r_ModelName = i_modelName;
-            r_LicenseNumber = i_licenseNumber;
+            r_PowerSource = i_PowerSource;
+            r_ModelName = i_ModelName;
+            r_LicenseNumber = i_LicenseNumber;
             m_Tires = i_Tires;
         }
     }

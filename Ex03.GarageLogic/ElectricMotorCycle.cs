@@ -13,19 +13,19 @@ namespace Ex03.GarageLogic
         }
 
         public ElectricMotorCycle(
-            float i_maxHours,
-            string i_modelName,
-            string i_licenseNumber,
-            List<Tire> i_wheels,
-            eLicenseType i_licenseType,
-            int i_engineVolume)
+            float i_MaxHours,
+            string i_ModelName,
+            string i_LicenseNumber,
+            List<Tire> i_Tires,
+            eLicenseType i_LicenseType,
+            int i_EngineVolume)
             : base(
-                new ElectricPowerSource(i_maxHours),
-                i_modelName,
-                i_licenseNumber,
-                i_wheels,
-                i_licenseType,
-                i_engineVolume)
+                new ElectricPowerSource(i_MaxHours),
+                i_ModelName,
+                i_LicenseNumber,
+                i_Tires,
+                i_LicenseType,
+                i_EngineVolume)
         {
         }
     }

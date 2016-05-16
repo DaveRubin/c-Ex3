@@ -18,46 +18,46 @@ namespace Ex03.GarageLogic
         /// in case of an existing vehicle, no new record will be created,
         /// and current vehicle state will be changed to InRepair
         /// </summary>
-        /// <param name="i_vehicle"></param>
-        /// <param name="i_owner"></param>
+        /// <param name="i_Vehicle"></param>
+        /// <param name="i_Owner"></param>
         /// <returns>true if a new record was created</returns>
-        public static bool InsertVehicleRecord(Vehicle i_vehicle, VehicleOwner i_owner)
+        public static bool InsertVehicleRecord(Vehicle i_Vehicle, VehicleOwner i_Owner)
         {
             bool res = false;
 
-            if (m_licenseToRecordDictionary.ContainsKey(i_vehicle.r_LicenseNumber))
+            if (m_licenseToRecordDictionary.ContainsKey(i_Vehicle.r_LicenseNumber))
             {
-                VehicleRecord recordToAlter = m_licenseToRecordDictionary[i_vehicle.r_LicenseNumber];
+                VehicleRecord recordToAlter = m_licenseToRecordDictionary[i_Vehicle.r_LicenseNumber];
                 recordToAlter.ChangeVehicleStatusTo(eVehicleStatus.BeingFixed);
             }
             else
             {
-                VehicleRecord record = new VehicleRecord(i_vehicle, i_owner);
-                m_licenseToRecordDictionary.Add(i_vehicle.r_LicenseNumber, record);
+                VehicleRecord record = new VehicleRecord(i_Vehicle, i_Owner);
+                m_licenseToRecordDictionary.Add(i_Vehicle.r_LicenseNumber, record);
                 res = true;
             }
 
             return res;
         }
 
-        public static VehicleRecord GetRecordByPlateNumber(string i_plateNumberRequested)
+        public static VehicleRecord GetRecordByPlateNumber(string i_PlateNumberRequested)
         {
-            return m_licenseToRecordDictionary[i_plateNumberRequested];
+            return m_licenseToRecordDictionary[i_PlateNumberRequested];
         }
 
         /// <summary>
         /// Get all license numbers for vehicles that match certain status
         /// </summary>
-        /// <param name="i_vehicleStatusToDisplay"></param>
+        /// <param name="i_VehicleStatusToDisplay"></param>
         /// <returns></returns>
-        public static List<string> GetLicensePlatesByStatus(eVehicleStatus i_vehicleStatusToDisplay)
+        public static List<string> GetLicensePlatesByStatus(eVehicleStatus i_VehicleStatusToDisplay)
         {
             List<string> matchingLicenseNumbers = new List<string>();
 
             foreach (KeyValuePair<string, VehicleRecord> entry in m_licenseToRecordDictionary)
             {
                 VehicleRecord recordToCheck = entry.Value;
-                if (recordToCheck.m_Status == i_vehicleStatusToDisplay)
+                if (recordToCheck.m_Status == i_VehicleStatusToDisplay)
                 {
                     matchingLicenseNumbers.Add(recordToCheck.m_Vehicle.r_LicenseNumber);
                 }
@@ -70,16 +70,16 @@ namespace Ex03.GarageLogic
         /// change record status by its vehicle license number
         /// return true if found & changed status
         /// </summary>
-        /// <param name="i_licenseNumber"></param>
-        /// <param name="i_newVehicleStatus"></param>
-        public static bool ChangeVehicleStatusTo(string i_licenseNumber, eVehicleStatus i_newVehicleStatus)
+        /// <param name="i_LicenseNumber"></param>
+        /// <param name="i_NewVehicleStatus"></param>
+        public static bool ChangeVehicleStatusTo(string i_LicenseNumber, eVehicleStatus i_NewVehicleStatus)
         {
             bool isFoundAndChanged = false;
 
-            if (m_licenseToRecordDictionary.ContainsKey(i_licenseNumber))
+            if (m_licenseToRecordDictionary.ContainsKey(i_LicenseNumber))
             {
-                VehicleRecord record = m_licenseToRecordDictionary[i_licenseNumber];
-                record.ChangeVehicleStatusTo(i_newVehicleStatus);
+                VehicleRecord record = m_licenseToRecordDictionary[i_LicenseNumber];
+                record.ChangeVehicleStatusTo(i_NewVehicleStatus);
                 isFoundAndChanged = true;
             }
 
@@ -90,14 +90,14 @@ namespace Ex03.GarageLogic
         /// Inflate all tires in a vehicle by its license number
         /// returns true if successfull 
         /// </summary>
-        /// <param name="i_licenseNumber"></param>
-        public static bool FillTiresToMax(string i_licenseNumber)
+        /// <param name="i_LicenseNumber"></param>
+        public static bool FillTiresToMax(string i_LicenseNumber)
         {
             bool isSuccess = false;
 
-            if (m_licenseToRecordDictionary.ContainsKey(i_licenseNumber))
+            if (m_licenseToRecordDictionary.ContainsKey(i_LicenseNumber))
             {
-                Vehicle vehicle = m_licenseToRecordDictionary[i_licenseNumber].m_Vehicle;
+                Vehicle vehicle = m_licenseToRecordDictionary[i_LicenseNumber].m_Vehicle;
 
                 foreach (Tire tire in vehicle.m_Tires)
                 {

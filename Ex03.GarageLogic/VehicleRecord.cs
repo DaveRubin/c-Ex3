@@ -6,10 +6,10 @@
         public VehicleOwner m_Owner;
         public Garage.eVehicleStatus m_Status;
 
-        public VehicleRecord(Vehicle i_vehicle, VehicleOwner i_owner)
+        public VehicleRecord(Vehicle i_Vehicle, VehicleOwner i_Owner)
         {
-            m_Vehicle = i_vehicle;
-            m_Owner = i_owner;
+            m_Vehicle = i_Vehicle;
+            m_Owner = i_Owner;
             m_Status = Garage.eVehicleStatus.BeingFixed;
         }
 

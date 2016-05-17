@@ -54,11 +54,11 @@ namespace Ex03.GarageLogic
         /// <summary>
         /// Get Fuel left (0-1)
         /// </summary>
-        public override float GetPercentageLeft
+        public int GetPercentageLeft
         {
             get
             {
-                return m_CurrentFuelAmount / r_MaxFuelAllowed;
+                return (int)(m_CurrentFuelAmount / r_MaxFuelAllowed) * 100;
             }
         }
 

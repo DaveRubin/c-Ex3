@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ex03.GarageLogic
 {
-    public class Motorcycle : Vehicle
+    public abstract class Motorcycle : Vehicle
     {
         public readonly eLicenseType r_LicenseType;
         public readonly int r_EngineVolume;
@@ -17,7 +17,7 @@ namespace Ex03.GarageLogic
         /// <param name="i_Tires"></param>
         /// <param name="i_LicenseType"></param>
         /// <param name="i_EngineVolume"></param>
-        public Motorcycle(
+        protected Motorcycle(
             PowerSource i_PowerSource,
             string i_ModelName,
             string i_LicenseNumber,

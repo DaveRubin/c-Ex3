@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ex03.GarageLogic
 {
-    public class Car : Vehicle
+    public abstract class Car : Vehicle
     {
         public static readonly List<int> sr_ValidVehicleDoorsList = new List<int>() { 2, 3, 4, 5 };
 
@@ -19,7 +19,7 @@ namespace Ex03.GarageLogic
         /// <param name="i_Tires"></param>
         /// <param name="i_Color"></param>
         /// <param name="i_DoorsCount"></param>
-        public Car(
+        protected Car(
             PowerSource i_PowerSource,
             string i_ModelName,
             string i_LicenseNumber,

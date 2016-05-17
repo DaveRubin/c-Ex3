@@ -1,9 +1,9 @@
 ﻿namespace Ex03.GarageLogic
 {
     // base class for other engine types
-    public class PowerSource
+    public abstract class PowerSource
     {
-        public virtual float GetPercentageLeft
+        public int GetPercentageLeft
         {
             get
             {
